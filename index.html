@@ -177,18 +177,18 @@
           <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Order & Inventory Hub</p>
         </div>
       </div>
-      <button onclick="toggleSidebar()" id="sidebarToggleBtn" title="Toggle Sidebar" class="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100/80 dark:hover:bg-slate-700 transition-colors">
+      <button type="button" onclick="toggleSidebar()" id="sidebarToggleBtn" title="Toggle Sidebar" class="p-2 rounded-xl text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100/80 dark:hover:bg-slate-700 transition-colors">
         <i class="fa-solid fa-bars-staggered text-sm"></i>
       </button>
     </div>
 
     <nav class="p-2 md:p-3 space-y-1 flex flex-col">
-      <button onclick="showPage('dashboard')" id="nav-dashboard" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="showPage('dashboard')" id="nav-dashboard" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <i class="fa-solid fa-chart-pie w-5 text-center shrink-0 text-base"></i>
         <span class="sidebar-text whitespace-nowrap">Dashboard</span>
       </button>
 
-      <button onclick="showPage('orders')" id="nav-orders" class="nav-btn group relative w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="showPage('orders')" id="nav-orders" class="nav-btn group relative w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-receipt w-5 text-center shrink-0 text-base"></i>
           <span class="sidebar-text whitespace-nowrap">Orders Directory</span>
@@ -196,24 +196,24 @@
         <span id="badgeOrderCount" class="sidebar-text text-xs bg-slate-200/90 dark:bg-slate-700/90 text-slate-700 dark:text-slate-300 font-bold px-2 py-0.5 rounded-full">0</span>
       </button>
 
-      <button onclick="startNewOrder()" id="nav-neworder" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="startNewOrder()" id="nav-neworder" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <i class="fa-solid fa-circle-plus w-5 text-center shrink-0 text-base text-indigo-600 dark:text-indigo-400"></i>
         <span class="sidebar-text whitespace-nowrap text-indigo-700 dark:text-indigo-400 font-bold" id="navNewOrderText">New Order</span>
       </button>
 
       <div class="sidebar-text pt-4 pb-1 px-3 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Inventory Management</div>
 
-      <button onclick="showPage('products')" id="nav-products" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="showPage('products')" id="nav-products" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <i class="fa-solid fa-box-open w-5 text-center shrink-0 text-base"></i>
         <span class="sidebar-text whitespace-nowrap">Products List</span>
       </button>
 
-      <button onclick="showPage('stock')" id="nav-stock" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="showPage('stock')" id="nav-stock" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <i class="fa-solid fa-boxes-stacked w-5 text-center shrink-0 text-base"></i>
         <span class="sidebar-text whitespace-nowrap">Stock Control</span>
       </button>
 
-      <button onclick="showPage('recyclebin')" id="nav-recyclebin" class="nav-btn group relative w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-rose-50/80 dark:hover:bg-rose-900/30 hover:text-rose-600 dark:hover:text-rose-400">
+      <button type="button" onclick="showPage('recyclebin')" id="nav-recyclebin" class="nav-btn group relative w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-rose-50/80 dark:hover:bg-rose-900/30 hover:text-rose-600 dark:hover:text-rose-400">
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-trash-can-arrow-up w-5 text-center shrink-0 text-base"></i>
           <span class="sidebar-text whitespace-nowrap">Recycle Bin</span>
@@ -223,39 +223,39 @@
 
       <div class="sidebar-text pt-4 pb-1 px-3 text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Analytics</div>
 
-      <button onclick="showPage('reports')" id="nav-reports" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
+      <button type="button" onclick="showPage('reports')" id="nav-reports" class="nav-btn group relative w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 text-slate-600 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-700/60">
         <i class="fa-solid fa-chart-line w-5 text-center shrink-0 text-base"></i>
         <span class="sidebar-text whitespace-nowrap">Sales Reports</span>
       </button>
     </nav>
 
     <div class="mt-auto p-4">
-      <button onclick="location.reload()" class="sidebar-text w-full flex items-center justify-center gap-2 bg-slate-100/90 dark:bg-slate-800/60 backdrop-blur hover:bg-rose-50/80 dark:hover:bg-rose-900/40 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 border border-slate-200/90 dark:border-slate-700 rounded-xl p-2.5 transition-colors text-xs font-bold shadow-sm">
+      <button type="button" onclick="location.reload()" class="sidebar-text w-full flex items-center justify-center gap-2 bg-slate-100/90 dark:bg-slate-800/60 backdrop-blur hover:bg-rose-50/80 dark:hover:bg-rose-900/40 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 border border-slate-200/90 dark:border-slate-700 rounded-xl p-2.5 transition-colors text-xs font-bold shadow-sm">
         <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <span>Logout</span>
+        <span>Reload</span>
       </button>
     </div>
   </aside>
 
   <!-- Mobile Bottom Navigation Bar -->
   <nav class="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-panel border-t border-slate-200/90 dark:border-slate-700/60 px-3 py-2 flex items-center justify-around shadow-2xl">
-    <button onclick="showPage('dashboard')" id="mob-nav-dashboard" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
+    <button type="button" onclick="showPage('dashboard')" id="mob-nav-dashboard" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
       <i class="fa-solid fa-chart-pie text-base"></i>
       <span>Dash</span>
     </button>
-    <button onclick="showPage('orders')" id="mob-nav-orders" class="relative flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
+    <button type="button" onclick="showPage('orders')" id="mob-nav-orders" class="relative flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
       <i class="fa-solid fa-receipt text-base"></i>
       <span>Orders</span>
       <span id="mobBadgeOrderCount" class="absolute -top-1 -right-2 text-[9px] bg-indigo-600 text-white font-bold px-1.5 py-0.2 rounded-full">0</span>
     </button>
-    <button onclick="startNewOrder()" id="mob-nav-neworder" class="w-12 h-12 -mt-5 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-transform">
+    <button type="button" onclick="startNewOrder()" id="mob-nav-neworder" class="w-12 h-12 -mt-5 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-transform">
       <i class="fa-solid fa-plus text-lg"></i>
     </button>
-    <button onclick="showPage('products')" id="mob-nav-products" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
+    <button type="button" onclick="showPage('products')" id="mob-nav-products" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
       <i class="fa-solid fa-box-open text-base"></i>
       <span>Stock</span>
     </button>
-    <button onclick="showPage('reports')" id="mob-nav-reports" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
+    <button type="button" onclick="showPage('reports')" id="mob-nav-reports" class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 hover:text-indigo-600 text-[11px] font-semibold">
       <i class="fa-solid fa-chart-line text-base"></i>
       <span>Reports</span>
     </button>
@@ -280,18 +280,18 @@
       </div>
       <div class="flex items-center gap-2 sm:gap-4">
         <!-- Manual Sync Button -->
-        <button onclick="fetchOrdersFromCloud()" title="Sync with Google Sheets" class="p-2 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+        <button type="button" onclick="fetchOrdersFromCloud()" title="Sync with Google Sheets" class="p-2 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
           <i class="fa-solid fa-rotate text-xs"></i>
         </button>
 
         <!-- Theme Switcher -->
         <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200/90 dark:border-slate-700 rounded-xl p-1 flex items-center text-slate-400">
-          <button onclick="setTheme('light')" id="theme-btn-light" title="Light" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-sun text-xs"></i></button>
-          <button onclick="setTheme('dark')" id="theme-btn-dark" title="Dark" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-moon text-xs"></i></button>
-          <button onclick="setTheme('auto')" id="theme-btn-auto" title="Auto" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-desktop text-xs"></i></button>
+          <button type="button" onclick="setTheme('light')" id="theme-btn-light" title="Light" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-sun text-xs"></i></button>
+          <button type="button" onclick="setTheme('dark')" id="theme-btn-dark" title="Dark" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-moon text-xs"></i></button>
+          <button type="button" onclick="setTheme('auto')" id="theme-btn-auto" title="Auto" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-desktop text-xs"></i></button>
         </div>
 
-        <button onclick="startNewOrder()" class="hidden sm:inline-flex glass-btn-primary items-center gap-2 font-semibold text-xs sm:text-sm px-4 py-2 rounded-xl transition-all">
+        <button type="button" onclick="startNewOrder()" class="hidden sm:inline-flex glass-btn-primary items-center gap-2 font-semibold text-xs sm:text-sm px-4 py-2 rounded-xl transition-all">
           <i class="fa-solid fa-plus"></i>
           <span>Create Order</span>
         </button>
@@ -309,7 +309,7 @@
           <p class="text-xs text-rose-700 dark:text-rose-300 mt-0.5" id="returnBannerMsg">Order has been cancelled / returned.</p>
         </div>
       </div>
-      <button onclick="dismissReturnBanner()" class="text-rose-400 dark:text-rose-500 hover:text-rose-700 dark:hover:text-rose-300 p-1">
+      <button type="button" onclick="dismissReturnBanner()" class="text-rose-400 dark:text-rose-500 hover:text-rose-700 dark:hover:text-rose-300 p-1">
         <i class="fa-solid fa-xmark text-sm"></i>
       </button>
     </div>
@@ -348,7 +348,7 @@
       </div>
     </div>
 
-    <!-- Delete Confirmation Modal (Cancel / Confirm System) -->
+    <!-- Delete Confirmation Modal -->
     <div id="deleteConfirmModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
       <div class="glass-panel rounded-3xl max-w-md w-full p-6 shadow-2xl border border-rose-300 dark:border-rose-800/80">
         <div class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl mb-4 border border-rose-200 dark:border-rose-800">
@@ -367,10 +367,10 @@
 
         <div class="flex items-center justify-end gap-3 pt-2">
           <button type="button" onclick="closeDeleteConfirmModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
-            Cancel (မဖျက်ပါ)
+            Cancel
           </button>
           <button type="button" onclick="executeDeleteConfirm()" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 shadow-md shadow-rose-200 dark:shadow-none transition-all">
-            Confirm / Delete (သေချာသည်)
+            Confirm / Delete
           </button>
         </div>
       </div>
@@ -420,7 +420,7 @@
             <h3 class="text-lg font-bold text-slate-900 dark:text-white" id="historyModalTitle">Stock History</h3>
             <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1" id="historyModalSubtitle">-</p>
           </div>
-          <button onclick="$('stockHistoryModal').classList.add('hidden')" class="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <button type="button" onclick="document.getElementById('stockHistoryModal').classList.add('hidden')" class="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
             <i class="fa-solid fa-xmark text-lg"></i>
           </button>
         </div>
@@ -491,7 +491,7 @@
                 <h3 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base">Recent Orders</h3>
                 <p class="text-[11px] sm:text-xs text-slate-400 dark:text-slate-500">Latest customer activities</p>
               </div>
-              <button onclick="showPage('orders')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 flex items-center gap-1.5">
+              <button type="button" onclick="showPage('orders')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 flex items-center gap-1.5">
                 <span>View All</span>
                 <i class="fa-solid fa-arrow-right text-[10px]"></i>
               </button>
@@ -543,7 +543,7 @@
             </div>
 
             <div class="flex items-center gap-2">
-              <button onclick="exportCSV()" class="glass-input hover:bg-slate-100 dark:hover:bg-slate-700 font-semibold text-xs px-3.5 py-2 rounded-xl transition-all inline-flex items-center gap-2">
+              <button type="button" onclick="exportCSV()" class="glass-input hover:bg-slate-100 dark:hover:bg-slate-700 font-semibold text-xs px-3.5 py-2 rounded-xl transition-all inline-flex items-center gap-2">
                 <i class="fa-solid fa-file-arrow-down text-slate-400"></i>
                 <span>Export CSV</span>
               </button>
@@ -705,9 +705,9 @@
       <!-- ================= PAGE: PRODUCTS ================= -->
       <section id="page-products" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
-          <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
+          <button type="button" onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Products</button>
+          <button type="button" onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
+          <button type="button" onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
         </div>
 
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
@@ -780,9 +780,9 @@
       <!-- ================= PAGE: STOCK CONTROL ================= -->
       <section id="page-stock" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Stock</button>
-          <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
+          <button type="button" onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
+          <button type="button" onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Stock</button>
+          <button type="button" onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
         </div>
 
         <div class="glass-panel rounded-2xl p-4 sm:p-5 space-y-4">
@@ -800,9 +800,9 @@
       <!-- ================= PAGE: RECYCLE BIN ================= -->
       <section id="page-recyclebin" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
-          <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-rose-600 text-white">Recycle Bin</button>
+          <button type="button" onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
+          <button type="button" onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
+          <button type="button" onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-rose-600 text-white">Recycle Bin</button>
         </div>
 
         <div class="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col min-h-[400px]">
@@ -833,9 +833,9 @@
                 <span class="text-slate-400 text-xs font-bold">To</span>
                 <input type="date" id="reportEnd" onchange="renderReports()" class="text-xs px-2 py-1.5 bg-transparent text-slate-700 dark:text-slate-200 outline-none">
               </div>
-              <button onclick="setReportTimeline('today')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">Today</button>
-              <button onclick="setReportTimeline('month')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">Month</button>
-              <button onclick="setReportTimeline('all')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">All</button>
+              <button type="button" onclick="setReportTimeline('today')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">Today</button>
+              <button type="button" onclick="setReportTimeline('month')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">Month</button>
+              <button type="button" onclick="setReportTimeline('all')" class="glass-input text-[10px] font-bold px-2.5 py-2 rounded-xl">All</button>
             </div>
           </div>
 
@@ -909,83 +909,8 @@
 <script>
 const $ = id => document.getElementById(id);
 
-// ==========================================
-// GOOGLE SHEETS APPS SCRIPT WEB APP INTEGRATION
-// ==========================================
+// GOOGLE SHEETS APPS SCRIPT URL
 const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwubDZBYvBqNZIq8NhlLObxYKGBALTDcEKSJtvQPsGxOPxGf7nP_QfYKjmbsdxZHRxkTw/exec";
-
-// ၁။ အော်ဒါအသစ်တင်တိုင်း Google Sheets သို့ အလိုအလျောက် ပို့ပေးသည့် စနစ်
-function syncToGoogleSheet(orderPayload) {
-  if (!GOOGLE_SHEET_URL) return;
-
-  const itemsSummary = (orderPayload.items || [])
-    .map(i => `${i.code ? `[${i.code}] ` : ''}${i.name} (${money(i.price)} x ${i.qty})`)
-    .join('; ');
-
-  const sheetData = {
-    ...orderPayload,
-    itemsSummary: itemsSummary
-  };
-
-  fetch(GOOGLE_SHEET_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(sheetData)
-  })
-  .then(() => {
-    console.log("Order saved to Google Sheets successfully");
-    const badge = $('syncStatusBadge');
-    if (badge) badge.classList.remove('hidden');
-  })
-  .catch(err => console.error("Google Sheets Sync Error:", err));
-}
-
-// ၂။ အခြား Device များမှ အော်ဒါများကို Google Sheets ဆီကနေ Auto ဆွဲယူ (Fetch) သည့် စနစ်
-function fetchOrdersFromCloud() {
-  if (!GOOGLE_SHEET_URL) return;
-
-  notify("Syncing with Google Sheets...", "ok");
-  fetch(GOOGLE_SHEET_URL)
-    .then(res => res.json())
-    .then(data => {
-      if (Array.isArray(data) && data.length > 0) {
-        appData.orders = data.map(row => {
-          let dateStr = row.date || row["Date"] ? String(row.date || row["Date"]) : "";
-          if (dateStr.includes("T")) dateStr = dateStr.split("T")[0];
-
-          const itemsText = row.itemsSummary || row["Products Summary"] || "Order Items";
-          const totalVal = Number(row.total) || Number(row["Total"]) || Number(row["Total (Ks)"]) || 0;
-          const deliVal = Number(row.delivery) || Number(row["Delivery"]) || Number(row["Delivery (Ks)"]) || 0;
-
-          return {
-            id: String(row.id || row["Order ID"] || "ORD-" + Math.floor(1000 + Math.random() * 9000)),
-            date: dateStr || new Date().toISOString().split("T")[0],
-            channel: row.channel || row["Channel"] || "Other",
-            customer: row.customer || row["Customer"] || "-",
-            phone: String(row.phone || row["Phone"] || "-"),
-            address: row.address || row["Address"] || "",
-            items: [{ name: itemsText, price: totalVal, qty: 1 }],
-            delivery: deliVal,
-            total: totalVal,
-            payment: row.payment || row["Payment"] || "Cash on Delivery",
-            paymentStatus: row.paymentStatus || row["Payment Status"] || "Pending",
-            transaction: String(row.transaction || row["Transaction ID"] || ""),
-            note: row.note || row["Notes"] || ""
-          };
-        });
-
-        saveToLocalStorage();
-        renderAll();
-        notify("Orders synced accurately!", "ok");
-        const badge = $('syncStatusBadge');
-        if (badge) badge.classList.remove('hidden');
-      }
-    })
-    .catch(err => {
-      console.error("Cloud fetch error:", err);
-    });
-}
 
 let appData = { orders: [], products: [], recycleBin: [] };
 let isSaving = false;
@@ -1000,8 +925,10 @@ let cachedProductSales = [];
 let cachedInvoiceSales = [];
 
 function setTheme(mode) {
-  localStorage.setItem('bc_theme', mode);
-  updateThemeUI(mode);
+  try {
+    localStorage.setItem('bc_theme', mode);
+    updateThemeUI(mode);
+  } catch (e) {}
 }
 
 function updateThemeUI(mode) {
@@ -1031,12 +958,6 @@ function updateThemeUI(mode) {
   }
 }
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  if((localStorage.getItem('bc_theme') || 'auto') === 'auto') {
-    updateThemeUI('auto');
-  }
-});
-
 function toggleSidebar() {
   const sidebar = $('mainSidebar');
   const brand = $('brandText');
@@ -1046,27 +967,19 @@ function toggleSidebar() {
   if (isSidebarCollapsed) {
     sidebar.classList.remove('md:w-64');
     sidebar.classList.add('md:w-20');
-    brand.classList.add('hidden');
+    if (brand) brand.classList.add('hidden');
     texts.forEach(t => t.classList.add('hidden'));
     $('sidebarToggleBtn').innerHTML = '<i class="fa-solid fa-arrow-right text-sm"></i>';
   } else {
     sidebar.classList.remove('md:w-20');
     sidebar.classList.add('md:w-64');
-    brand.classList.remove('hidden');
+    if (brand) brand.classList.remove('hidden');
     texts.forEach(t => t.classList.remove('hidden'));
     $('sidebarToggleBtn').innerHTML = '<i class="fa-solid fa-bars-staggered text-sm"></i>';
   }
 }
 
 function dismissReturnBanner() { $('returnBanner').classList.add('hidden'); }
-
-function triggerReturnNotice(orderId, customer) {
-  const banner = $('returnBanner');
-  $('returnBannerTitle').textContent = `Order Cancelled / Returned - [${orderId}]`;
-  $('returnBannerMsg').innerHTML = `Customer <strong>${escapeHtml(customer)}</strong>'s order (ID: <strong>${escapeHtml(orderId)}</strong>) was marked as cancelled.`;
-  banner.classList.remove('hidden');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 function money(val) { return (Number(val) || 0).toLocaleString('en-US') + ' Ks'; }
 function escapeHtml(str) {
@@ -1108,18 +1021,10 @@ function loadData() {
       appData.orders = appData.orders || [];
       appData.products = appData.products || [];
       appData.recycleBin = appData.recycleBin || [];
-      cleanupOldRecycleBinItems();
       normalizeProductAndStockData();
       normalizeOrderItems();
     } catch { initSeedData(); }
   } else { initSeedData(); }
-  renderAll();
-}
-
-function cleanupOldRecycleBinItems() {
-  const thirtyDaysAgo = new Date();
-  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  appData.recycleBin = appData.recycleBin.filter(o => new Date(o.deletedAt) > thirtyDaysAgo);
 }
 
 function normalizeProductAndStockData() {
@@ -1146,14 +1051,7 @@ function initSeedData() {
       { id: 'PRD-101', code: 'BC-101', name: 'Facial Serum 30ml', costPrice: 12000, price: 18000, poInCount: 100, poHistory:[{date: now, qty: 100}] },
       { id: 'PRD-102', code: 'BC-102', name: 'Coffee Mug', costPrice: 4000, price: 6500, poInCount: 60, poHistory:[{date: now, qty: 60}] }
     ],
-    orders: [
-      {
-        id: 'ORD-1001', date: new Date().toISOString().split('T')[0], channel: 'Facebook',
-        customer: 'Daw Aye', phone: '09798112233', address: 'Yangon',
-        items: [{ code: 'BC-101', name: 'Facial Serum 30ml', price: 18000, qty: 1 }],
-        delivery: 2500, total: 20500, payment: 'KBZPay', paymentStatus: 'Paid', transaction: 'KP-991283', note: ''
-      }
-    ],
+    orders: [],
     recycleBin: []
   };
   saveToLocalStorage();
@@ -1176,774 +1074,429 @@ function getStatusClasses(status) {
   return 'status-pending';
 }
 
-function updateSelectElementStyle(selectElem, status) {
-  if (!selectElem) return;
-  selectElem.className = `text-[11px] font-bold rounded-lg px-2.5 py-1 border transition-colors outline-none cursor-pointer backdrop-blur ${getStatusClasses(status)}`;
-  selectElem.dataset.previousValue = status;
+function syncToGoogleSheet(orderPayload) {
+  if (!GOOGLE_SHEET_URL) return;
+  const itemsSummary = (orderPayload.items || [])
+    .map(i => `${i.code ? `[${i.code}] ` : ''}${i.name} (${money(i.price)} x ${i.qty})`)
+    .join('; ');
+
+  const sheetData = {
+    ...orderPayload,
+    itemsSummary: itemsSummary
+  };
+
+  fetch(GOOGLE_SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(sheetData)
+  }).catch(() => {});
 }
 
-function renderStatusSelectHtml(order) {
-  const isCOD = (order.payment || '').toLowerCase() === 'cash on delivery';
-  const current = order.paymentStatus || 'Pending';
-  return `
-    <select onchange="requestStatusChange('${encodeURIComponent(order.id)}', this)" data-previous-value="${escapeHtml(current)}"
-      class="text-[11px] font-bold rounded-lg px-2.5 py-1 border transition-colors outline-none cursor-pointer backdrop-blur ${getStatusClasses(current)}">
-      <option value="Pending" class="dark:bg-slate-800 dark:text-slate-200" ${current === 'Pending' ? 'selected' : ''}>Pending</option>
-      <option value="Paid" class="dark:bg-slate-800 dark:text-slate-200" ${current === 'Paid' ? 'selected' : ''}>Paid</option>
-      ${isCOD ? `<option value="Delivery Pick Up" class="dark:bg-slate-800 dark:text-slate-200" ${current === 'Delivery Pick Up' ? 'selected' : ''}>Delivery Pick Up</option>` : ''}
-      <option value="Cancelled" class="dark:bg-slate-800 dark:text-slate-200" ${current === 'Cancelled' ? 'selected' : ''}>Cancelled / Return</option>
-    </select>
-  `;
-}
+async function fetchOrdersFromCloud() {
+  if (!GOOGLE_SHEET_URL) return;
+  try {
+    const res = await fetch(GOOGLE_SHEET_URL);
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) {
+      appData.orders = data.map(row => {
+        let dateStr = row.date || row["Date"] ? String(row.date || row["Date"]) : "";
+        if (dateStr.includes("T")) dateStr = dateStr.split("T")[0];
 
-function requestStatusChange(encodedId, selectElem) {
-  const id = decodeURIComponent(encodedId);
-  const order = appData.orders.find(o => String(o.id) === id);
-  if (!order) return;
-  const newStatus = selectElem.value;
-  const oldStatus = selectElem.dataset.previousValue || order.paymentStatus || 'Pending';
-  if (newStatus === oldStatus) return;
+        const itemsText = row.itemsSummary || row["Products Summary"] || "Order Items";
+        const totalVal = Number(row.total) || Number(row["Total"]) || Number(row["Total (Ks)"]) || 0;
+        const deliVal = Number(row.delivery) || Number(row["Delivery"]) || Number(row["Delivery (Ks)"]) || 0;
 
-  pendingStatusChange = { orderId: id, newStatus, oldStatus, selectElement: selectElem };
-  $('modalOrderId').textContent = id;
-  $('modalNewStatus').textContent = newStatus;
-  $('statusConfirmModal').classList.remove('hidden');
-}
+        return {
+          id: String(row.id || row["Order ID"] || "ORD-" + Math.floor(1000 + Math.random() * 9000)),
+          date: dateStr || new Date().toISOString().split("T")[0],
+          channel: row.channel || row["Channel"] || "Other",
+          customer: row.customer || row["Customer"] || "-",
+          phone: String(row.phone || row["Phone"] || "-"),
+          address: row.address || row["Address"] || "",
+          items: [{ name: itemsText, price: totalVal, qty: 1 }],
+          delivery: deliVal,
+          total: totalVal,
+          payment: row.payment || row["Payment"] || "Cash on Delivery",
+          paymentStatus: row.paymentStatus || row["Payment Status"] || "Pending",
+          transaction: String(row.transaction || row["Transaction ID"] || ""),
+          note: row.note || row["Notes"] || ""
+        };
+      });
 
-function cancelStatusChange() {
-  if (pendingStatusChange && pendingStatusChange.selectElement) {
-    pendingStatusChange.selectElement.value = pendingStatusChange.oldStatus;
-    updateSelectElementStyle(pendingStatusChange.selectElement, pendingStatusChange.oldStatus);
-  }
-  pendingStatusChange = null;
-  $('statusConfirmModal').classList.add('hidden');
-}
-
-function confirmStatusChange() {
-  if (!pendingStatusChange) return;
-  const { orderId, newStatus, selectElement } = pendingStatusChange;
-  const order = appData.orders.find(o => String(o.id) === orderId);
-
-  if (order) {
-    order.paymentStatus = newStatus;
-    if (selectElement) updateSelectElementStyle(selectElement, newStatus);
-    
-    if (newStatus === 'Cancelled') {
-      triggerReturnNotice(order.id, order.customer);
-      notify(`Order [${order.id}] marked as cancelled.`);
-    } else {
-      notify(`Order [${order.id}] updated to ${newStatus}`);
+      saveToLocalStorage();
+      renderAll();
+      const badge = $('syncStatusBadge');
+      if (badge) badge.classList.remove('hidden');
     }
-    saveToLocalStorage();
+  } catch (err) {}
+}
+
+function showPage(page) {
+  try {
+    document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
+    const target = $('page-' + page);
+    if (target) target.classList.remove('hidden');
+
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.classList.remove('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-slate-200');
+    });
+
+    const activeBtn = $('nav-' + page);
+    if (activeBtn) {
+      activeBtn.classList.add('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-slate-200/80');
+    }
+
+    ['dashboard', 'orders', 'products', 'reports'].forEach(p => {
+      const mobBtn = $('mob-nav-' + p);
+      if(mobBtn) {
+        if(page === p || (p === 'products' && (page === 'stock' || page === 'recyclebin'))) {
+          mobBtn.classList.add('text-indigo-600', 'dark:text-indigo-400');
+          mobBtn.classList.remove('text-slate-500', 'dark:text-slate-400');
+        } else {
+          mobBtn.classList.remove('text-indigo-600', 'dark:text-indigo-400');
+          mobBtn.classList.add('text-slate-500', 'dark:text-slate-400');
+        }
+      }
+    });
+
+    const titles = {
+      dashboard: ['Dashboard', 'Brick and Chill - Store Overview'],
+      orders: ['Orders Directory', 'Search by Invoice ID, customer, phone, or modify records'],
+      neworder: [$('editOrderId')?.value ? 'Edit Order' : 'Create New Order', 'Fill in customer and delivery information'],
+      products: ['Products List & Pricing', 'Product codes, cost, selling price and profit margins'],
+      stock: ['Stock Control', 'Real-time PO In, Out Sold, and Remaining stock balance'],
+      recyclebin: ['Recycle Bin', '30-day retention protection. Recover deleted orders safely.'],
+      reports: ['Sales & Financial Reports', 'Timeline analytics without delivery fees in revenue']
+    };
+
+    const [t, sub] = titles[page] || ['Dashboard', 'Overview'];
+    if ($('pageTitle')) $('pageTitle').textContent = t;
+    if ($('pageSubTitle')) $('pageSubTitle').textContent = sub;
+
+    if (page === 'dashboard') renderDashboard();
+    if (page === 'orders') renderOrders();
+    if (page === 'products') renderProducts();
+    if (page === 'stock') renderStock();
+    if (page === 'recyclebin') renderRecycleBin();
+    if (page === 'reports') renderReports();
+  } catch (err) {
+    console.error("Navigation error:", err);
   }
-  $('statusConfirmModal').classList.add('hidden');
-  pendingStatusChange = null;
-  renderDashboard(); 
 }
 
-function formatProductSummary(order) {
-  const items = order.items && order.items.length ? order.items : [{ name: order.product || 'Item', price: order.price || 0, qty: order.qty || 1, code: '' }];
-  return items.map(it => `
-    <div class="text-[11px] mb-0.5">
-      ${it.code ? `<span class="font-mono bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-1 py-0.5 rounded mr-1">${escapeHtml(it.code)}</span>` : ''}
-      <span class="font-medium text-slate-800 dark:text-slate-200">${escapeHtml(it.name)}</span>
-      <span class="text-slate-500 dark:text-slate-400 font-mono">(${money(it.price)} × ${Number(it.qty) || 1})</span>
-    </div>
-  `).join('');
-}
-
-function printInvoice(encodedId) {
-  const id = decodeURIComponent(encodedId);
-  const o = appData.orders.find(x => String(x.id) === id);
-  if (!o) return;
-
-  const items = (o.items && o.items.length) ? o.items : [{ code: '', name: 'Standard Product', price: o.price || 0, qty: o.qty || 1 }];
-  const itemsRows = items.map((it, idx) => `
-    <tr>
-      <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">${idx + 1}. ${it.code ? `[${escapeHtml(it.code)}] ` : ''}<strong>${escapeHtml(it.name)}</strong></td>
-      <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: right;">${money(it.price)}</td>
-      <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: center;">${Number(it.qty)}</td>
-      <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: right;">${money(Number(it.price) * Number(it.qty))}</td>
-    </tr>
-  `).join('');
-
-  const printHtml = `<!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Invoice - ${escapeHtml(o.id)}</title>
-    <style>
-      body { font-family: 'Inter', system-ui, sans-serif; padding: 40px; color: #1e293b; max-width: 700px; margin: auto; }
-      .header { display: flex; justify-content: space-between; border-bottom: 2px solid #6366f1; padding-bottom: 15px; margin-bottom: 20px; }
-      .title { font-size: 24px; font-weight: 800; color: #4338ca; }
-      .meta { text-align: right; font-size: 13px; color: #64748b; }
-      .card { background: #f8fafc; border-radius: 12px; padding: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; }
-      table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
-      th { text-align: left; padding: 10px; background: #eef2ff; color: #3730a3; font-weight: 700; }
-      .total-row { font-size: 16px; font-weight: 800; color: #4338ca; border-top: 2px solid #cbd5e1; }
-      @media print { .no-print { display: none; } body { padding: 10px; } }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <div>
-        <div class="title">BRICK AND CHILL</div>
-        <p style="margin: 2px 0 0; color: #64748b; font-size: 13px;">Customer Sales Receipt</p>
-      </div>
-      <div class="meta">
-        <div><strong>Invoice #:</strong> ${escapeHtml(o.id)}</div>
-        <div><strong>Date:</strong> ${escapeHtml(o.date)}</div>
-        <div><strong>Channel:</strong> ${escapeHtml(o.channel || 'Direct')}</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;">Customer Details:</div>
-      <div style="font-size: 15px; font-weight: 800; margin-top: 4px;">${escapeHtml(o.customer)}</div>
-      <div style="font-size: 13px; color: #475569;">Phone: ${escapeHtml(o.phone)}</div>
-      <div style="font-size: 13px; color: #475569;">Address: ${escapeHtml(o.address)}</div>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>ITEM</th>
-          <th style="text-align: right;">PRICE</th>
-          <th style="text-align: center;">QTY</th>
-          <th style="text-align: right;">AMOUNT</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${itemsRows}
-        <tr>
-          <td colspan="3" style="padding: 10px; text-align: right; color: #64748b;">Delivery Fee:</td>
-          <td style="padding: 10px; text-align: right;">${money(o.delivery)}</td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="3" style="padding: 12px 10px; text-align: right;">GRAND TOTAL:</td>
-          <td style="padding: 12px 10px; text-align: right;">${money(o.total)}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div style="margin-top: 25px; font-size: 13px; color: #475569;">
-      <p><strong>Payment:</strong> ${escapeHtml(o.payment)} (${escapeHtml(o.paymentStatus)})</p>
-      ${o.transaction ? `<p><strong>Ref / Transaction ID:</strong> ${escapeHtml(o.transaction)}</p>` : ''}
-      ${o.note ? `<p><strong>Note:</strong> ${escapeHtml(o.note)}</p>` : ''}
-    </div>
-
-    <div class="no-print" style="text-align: center; margin-top: 35px;">
-      <button onclick="window.print()" style="padding: 10px 24px; background: #6366f1; color: #fff; font-weight: 700; border: none; border-radius: 10px; cursor: pointer;">
-        Print Invoice
-      </button>
-    </div>
-  </body>
-  </html>`;
-
-  const win = window.open('', '_blank');
-  if(!win) return notify('Allow pop-ups to print invoice', 'error');
-  win.document.open();
-  win.document.write(printHtml);
-  win.document.close();
-}
-
-// 1. ORDERS DIRECTORY: Mobile Cards + Desktop Table
-function generateOrdersTable(ordersList) {
-  if (!ordersList || !ordersList.length) return '<div class="p-8 text-center text-slate-400 text-xs">No orders found.</div>';
+function renderAll() {
+  if ($('badgeOrderCount')) $('badgeOrderCount').textContent = appData.orders.length;
+  if ($('mobBadgeOrderCount')) $('mobBadgeOrderCount').textContent = appData.orders.length;
+  if ($('badgeBinCount')) $('badgeBinCount').textContent = appData.recycleBin.length;
   
-  // Mobile Card View (md:hidden)
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  ordersList.forEach(o => {
-    mobCards += `
-      <div class="p-4 space-y-2.5">
-        <div class="flex items-center justify-between">
-          <div>
-            <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${escapeHtml(o.id)}</span>
-            <span class="text-[10px] text-slate-400 dark:text-slate-500 ml-2 font-mono">${escapeHtml(o.date)}</span>
-          </div>
-          <div>${channelBadge(o.channel)}</div>
-        </div>
-        
-        <div class="flex justify-between items-start gap-2">
-          <div>
-            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(o.customer)}</div>
-            <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(o.phone)}</div>
-          </div>
-          <div class="text-right">
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${money(o.total)}</span>
-            <span class="text-[10px] text-slate-400">Deliv: ${money(o.delivery)}</span>
-          </div>
-        </div>
+  const now = new Date();
+  const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+  const todayStr = now.toISOString().split('T')[0];
+  if($('reportStart') && !$('reportStart').value) $('reportStart').value = firstDay;
+  if($('reportEnd') && !$('reportEnd').value) $('reportEnd').value = todayStr;
 
-        <div class="p-2.5 bg-slate-50/90 dark:bg-slate-800/60 rounded-xl border border-slate-200/70 dark:border-slate-700/50 text-[11px]">
-          ${formatProductSummary(o)}
-        </div>
+  renderDashboard();
+  renderOrders();
+  renderProducts();
+  renderStock();
+  renderReports();
+  updateDatalistPresets();
+}
 
-        <div class="flex items-center justify-between pt-1">
-          <div>${renderStatusSelectHtml(o)}</div>
-          <div class="flex items-center gap-1.5">
-            <button onclick="printInvoice('${encodeURIComponent(o.id)}')" title="Print" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
-              <i class="fa-solid fa-print text-xs"></i>
-            </button>
-            <button onclick="editOrder('${encodeURIComponent(o.id)}')" title="Edit" class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold text-xs border border-slate-200 dark:border-slate-600">
-              <i class="fa-solid fa-pen-to-square text-[10px]"></i> Edit
-            </button>
-            <button onclick="requestDeleteOrder('${encodeURIComponent(o.id)}')" title="Delete" class="p-1.5 rounded-lg bg-rose-50 dark:bg-slate-700 text-rose-500 border border-rose-200 dark:border-slate-600">
-              <i class="fa-regular fa-trash-can text-xs"></i>
-            </button>
-          </div>
-        </div>
+function startNewOrder() {
+  if ($('editOrderId')) $('editOrderId').value = '';
+  if ($('orderForm')) $('orderForm').reset();
+  if ($('delivery')) $('delivery').value = 0;
+  if ($('channel')) $('channel').value = 'Facebook';
+  if ($('payment')) $('payment').value = 'Cash on Delivery';
+  syncFormStatusOptions('Pending');
+
+  if ($('productItemsContainer')) {
+    $('productItemsContainer').innerHTML = '';
+    addProductItemRow('', '', 0, 1);
+  }
+
+  if ($('orderFormHeaderTitle')) $('orderFormHeaderTitle').textContent = 'Create New Order';
+  if ($('editingOrderIdBadge')) $('editingOrderIdBadge').classList.add('hidden');
+  if ($('submitBtnText')) $('submitBtnText').textContent = 'Save Order';
+  calculateOrder();
+  showPage('neworder');
+}
+
+function addProductItemRow(code = '', name = '', price = 0, qty = 1) {
+  const container = $('productItemsContainer');
+  if (!container) return;
+  const rowId = 'row-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+  const div = document.createElement('div');
+  div.id = rowId;
+  div.className = 'product-row p-3.5 bg-slate-50/90 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl space-y-2';
+
+  div.innerHTML = `
+    <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+      <div class="sm:col-span-3">
+        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Product Code</label>
+        <input type="text" placeholder="e.g. BC-101" value="${escapeHtml(code)}" list="productCodesDatalist" oninput="handleCodeAutoFill('${rowId}', this.value)"
+          class="item-code glass-input w-full px-3 py-2 rounded-lg text-xs font-mono uppercase outline-none font-bold text-indigo-700 dark:text-indigo-400">
       </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  // Desktop Table View (hidden md:block)
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700/60 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-          <tr>
-            <th class="py-3 px-4">Order ID & Date</th>
-            <th class="py-3 px-4">Customer</th>
-            <th class="py-3 px-4">Channel</th>
-            <th class="py-3 px-4">Product Details</th>
-            <th class="py-3 px-4">Total</th>
-            <th class="py-3 px-4">Payment</th>
-            <th class="py-3 px-4">Status</th>
-            <th class="py-3 px-4 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${ordersList.map(o => `
-            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-3 px-4">
-                <span class="font-mono font-bold text-indigo-600 dark:text-indigo-400 block">${escapeHtml(o.id)}</span>
-                <span class="text-[10px] text-slate-400 dark:text-slate-500">${escapeHtml(o.date)}</span>
-              </td>
-              <td class="py-3 px-4">
-                <div class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(o.customer)}</div>
-                <div class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">${escapeHtml(o.phone)}</div>
-              </td>
-              <td class="py-3 px-4">${channelBadge(o.channel)}</td>
-              <td class="py-3 px-4">${formatProductSummary(o)}</td>
-              <td class="py-3 px-4">
-                <span class="font-bold text-slate-800 dark:text-slate-200 block">${money(o.total)}</span>
-                <span class="text-[10px] text-slate-400">Deliv: ${money(o.delivery)}</span>
-              </td>
-              <td class="py-3 px-4">
-                <span class="text-slate-700 dark:text-slate-300 font-medium block">${escapeHtml(o.payment)}</span>
-                ${o.transaction ? `<span class="text-[10px] text-slate-400 font-mono block">${escapeHtml(o.transaction)}</span>` : ''}
-              </td>
-              <td class="py-3 px-4">${renderStatusSelectHtml(o)}</td>
-              <td class="py-3 px-4 text-right">
-                <div class="flex items-center justify-end gap-1">
-                  <button onclick="printInvoice('${encodeURIComponent(o.id)}')" title="Print Invoice" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-indigo-600 border border-slate-200 dark:border-slate-600 transition-colors">
-                    <i class="fa-solid fa-print"></i>
-                  </button>
-                  <button onclick="editOrder('${encodeURIComponent(o.id)}')" title="Edit Order" class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-indigo-600 border border-slate-200 dark:border-slate-600 font-semibold transition-colors">
-                    <i class="fa-solid fa-pen-to-square text-[11px]"></i> Edit
-                  </button>
-                  <button onclick="requestDeleteOrder('${encodeURIComponent(o.id)}')" title="Delete Order" class="p-1.5 rounded-lg bg-rose-50 dark:bg-slate-700 text-rose-500 hover:text-rose-700 border border-rose-200 dark:border-slate-600 transition-colors">
-                    <i class="fa-regular fa-trash-can"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>`).join('')}
-        </tbody>
-      </table>
+      <div class="sm:col-span-4">
+        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Name *</label>
+        <input type="text" required placeholder="Name" value="${escapeHtml(name)}" list="productsDatalist"
+          class="item-name glass-input w-full px-3 py-2 rounded-lg text-xs outline-none">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Price *</label>
+        <input type="number" min="0" step="any" required value="${price || 0}" oninput="calculateOrder()"
+          class="item-price glass-input w-full px-3 py-2 rounded-lg text-xs outline-none font-semibold text-slate-800 dark:text-slate-200">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Qty *</label>
+        <input type="number" min="1" step="1" required value="${qty || 1}" oninput="calculateOrder()"
+          class="item-qty glass-input w-full px-3 py-2 rounded-lg text-xs outline-none">
+      </div>
+      <div class="sm:col-span-1 flex justify-end">
+        <button type="button" onclick="removeProductItemRow('${rowId}')" title="Delete Row" 
+          class="p-2 text-slate-400 hover:text-rose-600 rounded-lg transition-colors">
+          <i class="fa-solid fa-trash-can text-sm"></i>
+        </button>
+      </div>
     </div>
   `;
-
-  return mobCards + deskTable;
+  container.appendChild(div);
+  calculateOrder();
 }
 
-// 2. DASHBOARD: Recent Orders Mobile Cards + Desktop Table
+function handleCodeAutoFill(rowId, inputCode) {
+  if (!inputCode) return;
+  const matched = appData.products.find(p => (p.code || '').toUpperCase() === inputCode.trim().toUpperCase());
+  if (matched) {
+    const row = document.getElementById(rowId);
+    if (!row) return;
+    row.querySelector('.item-name').value = matched.name;
+    row.querySelector('.item-price').value = matched.price;
+    calculateOrder();
+  }
+}
+
+function removeProductItemRow(rowId) {
+  const rows = $('productItemsContainer').querySelectorAll('.product-row');
+  if (rows.length <= 1) { notify('At least one product item is required.', 'error'); return; }
+  document.getElementById(rowId)?.remove();
+  calculateOrder();
+}
+
+function calculateOrder() {
+  const rows = document.querySelectorAll('.product-row');
+  let totalQty = 0, subtotal = 0;
+  rows.forEach(r => {
+    const p = Number(r.querySelector('.item-price')?.value) || 0;
+    const q = Number(r.querySelector('.item-qty')?.value) || 0;
+    totalQty += q; subtotal += (p * q);
+  });
+  const delivery = Number($('delivery')?.value) || 0;
+  if ($('summaryQty')) $('summaryQty').textContent = totalQty;
+  if ($('subtotalText')) $('subtotalText').textContent = money(subtotal);
+  if ($('deliveryText')) $('deliveryText').textContent = money(delivery);
+  if ($('totalText')) $('totalText').textContent = money(subtotal + delivery);
+}
+
+function syncFormStatusOptions(selectedStatus = null) {
+  const isCOD = $('payment')?.value === 'Cash on Delivery';
+  const sel = $('paymentStatus');
+  if (!sel) return;
+  const prevVal = selectedStatus || sel.value || 'Pending';
+  sel.innerHTML = `
+    <option value="Pending" class="dark:bg-slate-800 dark:text-slate-200">Pending</option>
+    <option value="Paid" class="dark:bg-slate-800 dark:text-slate-200">Paid</option>
+    ${isCOD ? '<option value="Delivery Pick Up" class="dark:bg-slate-800 dark:text-slate-200">Delivery Pick Up</option>' : ''}
+    <option value="Cancelled" class="dark:bg-slate-800 dark:text-slate-200">Cancelled / Return</option>`;
+  sel.value = (prevVal === 'Delivery Pick Up' && !isCOD) ? 'Pending' : prevVal;
+}
+
+function handleOrderSubmit(e) {
+  e.preventDefault();
+  if (isSaving) return;
+
+  const editId = $('editOrderId').value.trim();
+  const delivery = Number($('delivery').value) || 0;
+  const paymentStatus = $('paymentStatus').value;
+  
+  const items = [];
+  document.querySelectorAll('.product-row').forEach(r => {
+    const code = r.querySelector('.item-code')?.value.trim() || '';
+    const name = r.querySelector('.item-name')?.value.trim();
+    const price = Number(r.querySelector('.item-price')?.value);
+    const qty = Number(r.querySelector('.item-qty')?.value);
+    if (name && qty > 0) items.push({ code, name, price, qty });
+  });
+
+  if (!items.length) { notify('Please add at least one product.', 'error'); return; }
+
+  const payload = {
+    customer: $('customer').value.trim(), phone: $('phone').value.trim(), address: $('address').value.trim(),
+    channel: $('channel').value, items, delivery, total: items.reduce((s, it) => s + (it.price * it.qty), 0) + delivery,
+    payment: $('payment').value, paymentStatus, transaction: $('transaction').value.trim(), note: $('note').value.trim()
+  };
+
+  isSaving = true;
+  if (editId) {
+    payload.id = editId;
+    const idx = appData.orders.findIndex(o => String(o.id) === String(editId));
+    if (idx !== -1) {
+      payload.date = appData.orders[idx].date || new Date().toISOString().split('T')[0];
+      appData.orders[idx] = { ...appData.orders[idx], ...payload };
+      saveToLocalStorage();
+      notify(`Order [${editId}] updated!`);
+    }
+  } else {
+    payload.id = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
+    payload.date = new Date().toISOString().split('T')[0];
+    appData.orders.unshift(payload);
+    saveToLocalStorage();
+    syncToGoogleSheet(payload);
+    notify(`Order #[${payload.id}] created!`);
+  }
+
+  isSaving = false;
+  renderAll();
+  showPage('orders');
+}
+
 function renderDashboard() {
   const o = appData.orders;
-  $('statOrders').textContent = o.length;
-  $('statPending').textContent = o.filter(x => x.paymentStatus === 'Pending').length;
-  $('statPaid').textContent = o.filter(x => x.paymentStatus === 'Paid').length;
-  $('statRevenue').textContent = money(o.filter(x => x.paymentStatus === 'Paid').reduce((s, x) => s + Number(x.total || 0), 0));
+  if ($('statOrders')) $('statOrders').textContent = o.length;
+  if ($('statPending')) $('statPending').textContent = o.filter(x => x.paymentStatus === 'Pending').length;
+  if ($('statPaid')) $('statPaid').textContent = o.filter(x => x.paymentStatus === 'Paid').length;
+  if ($('statRevenue')) $('statRevenue').textContent = money(o.filter(x => x.paymentStatus === 'Paid').reduce((s, x) => s + Number(x.total || 0), 0));
   
   const recentSlice = o.slice(0, 5);
-  let rContent = '';
+  const container = $('recentOrdersTable');
+  if (!container) return;
 
   if (!recentSlice.length) {
-    rContent = '<div class="p-6 text-center text-slate-400 text-xs">No orders recorded yet.</div>';
-  } else {
-    let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-    recentSlice.forEach(x => {
-      mobCards += `
-        <div class="p-3.5 space-y-2 hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${escapeHtml(x.id)}</span>
-              <span class="text-[10px] text-slate-400 dark:text-slate-500 ml-2 font-mono">${escapeHtml(x.date)}</span>
-            </div>
-            <div>${channelBadge(x.channel)}</div>
-          </div>
-          
-          <div class="flex items-start justify-between gap-2">
-            <div>
-              <div class="font-semibold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(x.customer)}</div>
-              <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.phone || '-')}</div>
-            </div>
-            <div class="text-right">
-              <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${money(x.total)}</span>
-              <span class="text-[10px] text-slate-400">Deliv: ${money(x.delivery)}</span>
-            </div>
-          </div>
-
-          <div class="pt-1.5 flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 text-[10px]">
-            <span class="text-slate-500 dark:text-slate-400 truncate max-w-[170px]">
-              ${(x.items || []).map(i => `${i.name} (x${i.qty})`).join(', ')}
-            </span>
-            <span class="font-bold px-2 py-0.5 rounded ${getStatusClasses(x.paymentStatus)}">
-              ${escapeHtml(x.paymentStatus)}
-            </span>
-          </div>
-        </div>
-      `;
-    });
-    mobCards += `</div>`;
-
-    let deskTable = `
-      <div class="hidden md:block overflow-x-auto">
-        <table class="w-full text-left border-collapse text-xs">
-          <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700/60 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-            <tr>
-              <th class="py-2.5 px-3">Order ID</th>
-              <th class="py-2.5 px-3">Customer</th>
-              <th class="py-2.5 px-3">Channel</th>
-              <th class="py-2.5 px-3">Total</th>
-              <th class="py-2.5 px-3">Status</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-    `;
-    recentSlice.forEach(x => {
-      deskTable += `
-        <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-          <td class="py-2.5 px-3">
-            <span class="font-mono font-bold text-indigo-600 dark:text-indigo-400">${escapeHtml(x.id)}</span>
-            <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.date)}</div>
-          </td>
-          <td class="py-2.5 px-3">
-            <div class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(x.customer)}</div>
-            <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.phone || '-')}</div>
-          </td>
-          <td class="py-2.5 px-3">${channelBadge(x.channel)}</td>
-          <td class="py-2.5 px-3 font-bold text-slate-800 dark:text-slate-200">${money(x.total)}</td>
-          <td class="py-2.5 px-3">
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(x.paymentStatus)}">
-              ${escapeHtml(x.paymentStatus)}
-            </span>
-          </td>
-        </tr>
-      `;
-    });
-    deskTable += `</tbody></table></div>`;
-
-    rContent = mobCards + deskTable;
+    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No orders recorded yet.</div>';
+    return;
   }
 
-  $('recentOrdersTable').innerHTML = rContent;
-
-  const soldMap = {};
-  o.forEach(x => {
-    const st = (x.paymentStatus || '').toLowerCase();
-    if (st === 'cancelled' || st === 'return' || st === 'cancelled / return') return;
-    (x.items || []).forEach(it => {
-      const key = it.code ? it.code : it.name;
-      if(!soldMap[key]) soldMap[key] = { code: it.code, name: it.name, qty: 0 };
-      soldMap[key].qty += Number(it.qty) || 0;
-    });
-  });
-  const soldList = Object.values(soldMap).sort((a,b) => b.qty - a.qty).slice(0, 10);
-  const listEl = $('dashSoldProductsList');
-  if(!soldList.length) {
-    listEl.innerHTML = '<li class="p-5 text-center text-xs text-slate-400">No sold products yet.</li>';
-  } else {
-    listEl.innerHTML = soldList.map(item => `
-      <li class="p-3 sm:p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+  let html = `<div class="divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
+  recentSlice.forEach(x => {
+    html += `
+      <div class="p-3.5 flex items-center justify-between hover:bg-slate-50/80 dark:hover:bg-slate-800/40">
         <div>
-          ${item.code ? `<span class="text-[10px] font-mono bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-1.5 py-0.5 rounded mr-1">${escapeHtml(item.code)}</span>` : ''}
-          <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(item.name)}</span>
+          <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${escapeHtml(x.id)}</span>
+          <div class="font-semibold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(x.customer)}</div>
         </div>
-        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded-lg">${item.qty} Sold</span>
-      </li>
-    `).join('');
-  }
+        <div class="text-right">
+          <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${money(x.total)}</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(x.paymentStatus)}">${escapeHtml(x.paymentStatus)}</span>
+        </div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
 }
 
-// 3. PRODUCTS LIST: Mobile Cards + Desktop Table
+function renderOrders() {
+  const container = $('ordersTable');
+  if (!container) return;
+  const list = appData.orders;
+  if (!list.length) {
+    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No orders found. Click "Create Order" to add one.</div>';
+    return;
+  }
+
+  let html = `<div class="divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
+  list.forEach(o => {
+    html += `
+      <div class="p-4 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${escapeHtml(o.id)}</span>
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded ${getStatusClasses(o.paymentStatus)}">${escapeHtml(o.paymentStatus)}</span>
+        </div>
+        <div class="flex justify-between items-start text-xs">
+          <div>
+            <div class="font-bold text-slate-800 dark:text-slate-200">${escapeHtml(o.customer)} (${escapeHtml(o.phone)})</div>
+            <div class="text-[11px] text-slate-500">${escapeHtml(o.address)}</div>
+          </div>
+          <div class="text-right font-bold text-indigo-600 dark:text-indigo-400">${money(o.total)}</div>
+        </div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
 function renderProducts() {
   const container = $('productsTable');
   if (!container) return;
   const list = appData.products;
-  $('productCountBadge').textContent = list.length + ' Items';
+  if ($('productCountBadge')) $('productCountBadge').textContent = list.length + ' Items';
 
-  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
+  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products added.</div>'; return; }
 
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
+  let html = `<div class="divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
   list.forEach(p => {
-    const cost = Number(p.costPrice) || 0;
-    const selling = Number(p.price) || 0;
-    const profit = selling - cost;
-    mobCards += `
-      <div class="p-4 space-y-2">
-        <div class="flex justify-between items-start">
-          <div>
-            <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-          </div>
-          <button onclick="requestDeleteProduct('${encodeURIComponent(p.id)}')" title="Delete" class="p-1.5 text-slate-400 hover:text-rose-600 rounded">
-            <i class="fa-solid fa-trash-can text-xs"></i>
-          </button>
+    html += `
+      <div class="p-3.5 flex items-center justify-between">
+        <div>
+          <span class="font-mono text-xs font-bold bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded">${escapeHtml(p.code)}</span>
+          <span class="font-semibold text-xs ml-2 text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
         </div>
-        <div class="flex justify-between items-center text-xs pt-1">
-          <div>
-            <span class="text-[10px] text-slate-400 block">Cost: ${money(cost)}</span>
-            <span class="font-bold text-slate-800 dark:text-slate-200">Sell: ${money(selling)}</span>
-          </div>
-          <div class="text-right">
-            <span class="font-bold text-emerald-700 dark:text-emerald-400 block">${money(profit)}</span>
-            <span class="text-[9px] text-slate-400 font-semibold">${selling > 0 ? ((profit/selling)*100).toFixed(0) : 0}% Margin</span>
-          </div>
-        </div>
+        <div class="text-right font-bold text-xs text-slate-800 dark:text-slate-200">${money(p.price)}</div>
       </div>
     `;
   });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left text-xs border-collapse">
-        <thead>
-          <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-            <th class="py-2.5 px-3">Product</th>
-            <th class="py-2.5 px-3">Cost / Sell</th>
-            <th class="py-2.5 px-3">Profit (အမြတ်)</th>
-            <th class="py-2.5 px-3 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => {
-            const cost = Number(p.costPrice) || 0;
-            const selling = Number(p.price) || 0;
-            const profit = selling - cost;
-            return `
-              <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-                <td class="py-2.5 px-3">
-                  <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-                  <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-                </td>
-                <td class="py-2.5 px-3">
-                  <div class="text-[10px] text-slate-400">Cost: ${money(cost)}</div>
-                  <div class="font-bold text-slate-800 dark:text-slate-200">Sell: ${money(selling)}</div>
-                </td>
-                <td class="py-2.5 px-3">
-                  <span class="font-bold text-emerald-700 dark:text-emerald-400">${money(profit)}</span>
-                  <span class="text-[9px] text-slate-400 block">${selling > 0 ? ((profit/selling)*100).toFixed(0) : 0}% Margin</span>
-                </td>
-                <td class="py-2.5 px-3 text-right">
-                  <button onclick="requestDeleteProduct('${encodeURIComponent(p.id)}')" title="Delete Product" class="p-1.5 text-slate-400 hover:text-rose-600 rounded transition-colors">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                </td>
-              </tr>
-            `;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
+  html += `</div>`;
+  container.innerHTML = html;
 }
 
-// 4. STOCK CONTROL: Mobile Cards + Desktop Table
 function renderStock() {
   const container = $('stockTable');
   if (!container) return;
   const list = appData.products;
-  $('productStockCountBadge').textContent = list.length + ' Items';
-
   if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
 
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
+  let html = `<div class="divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
   list.forEach(p => {
-    const poIn = Number(p.poInCount) || 0;
-    const outStock = getProductOutStock(p);
-    const remaining = poIn - outStock;
-    let stockBadgeClass = 'bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800';
-    if (remaining <= 5) stockBadgeClass = 'bg-rose-50 text-rose-700 border border-rose-300 font-bold dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800';
-    else if (remaining <= 15) stockBadgeClass = 'bg-amber-50 text-amber-700 border border-amber-300 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800';
-
-    mobCards += `
-      <div class="p-4 space-y-2.5">
-        <div class="flex justify-between items-center">
-          <div>
-            <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-          </div>
-          <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold ${stockBadgeClass}">
-            ${remaining} In Stock
-          </span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs pt-1">
-          <div class="flex items-center gap-2">
-            <button onclick="showHistoryModal('${p.id}', 'in')" class="px-2 py-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-300 font-mono font-bold text-[11px]" title="PO In History">
-              PO: ${poIn}
-            </button>
-            <button onclick="showHistoryModal('${p.id}', 'out')" class="px-2 py-1 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 border border-rose-200 dark:border-rose-800 rounded-lg text-rose-600 dark:text-rose-400 font-mono font-bold text-[11px]" title="Sold Out History">
-              Out: ${outStock}
-            </button>
-          </div>
-          <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" title="Add PO In Stock" class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-850 transition-colors">
-            <i class="fa-solid fa-plus text-[10px]"></i> In
-          </button>
-        </div>
+    html += `
+      <div class="p-3.5 flex items-center justify-between">
+        <span class="font-semibold text-xs">${escapeHtml(p.name)}</span>
+        <span class="font-bold text-xs px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700">${p.poInCount || 0} In Stock</span>
       </div>
     `;
   });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead>
-          <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-            <th class="py-2.5 px-3">Product Name</th>
-            <th class="py-2.5 px-3 text-center">In (PO)</th>
-            <th class="py-2.5 px-3 text-center">Out (Sold)</th>
-            <th class="py-2.5 px-3 text-center">In Stock</th>
-            <th class="py-2.5 px-3 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => {
-            const poIn = Number(p.poInCount) || 0;
-            const outStock = getProductOutStock(p);
-            const remaining = poIn - outStock;
-            let stockBadgeClass = 'bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800';
-            if (remaining <= 5) stockBadgeClass = 'bg-rose-50 text-rose-700 border border-rose-300 font-bold dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800';
-            else if (remaining <= 15) stockBadgeClass = 'bg-amber-50 text-amber-700 border border-amber-300 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800';
-
-            return `
-              <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-                <td class="py-2.5 px-3">
-                  <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-                  <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <button onclick="showHistoryModal('${p.id}', 'in')" class="font-mono font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 px-2.5 py-1 rounded-md transition-colors" title="View In History">${poIn}</button>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <button onclick="showHistoryModal('${p.id}', 'out')" class="font-mono font-bold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 px-2.5 py-1 rounded-md border border-rose-200 dark:border-rose-800 transition-colors" title="View Out History">${outStock}</button>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-mono font-bold ${stockBadgeClass}">
-                    ${remaining}
-                  </span>
-                </td>
-                <td class="py-2.5 px-3 text-right">
-                  <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" title="Add PO In Stock" class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-850 transition-colors">
-                    <i class="fa-solid fa-plus text-[10px]"></i> In
-                  </button>
-                </td>
-              </tr>
-            `;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
+  html += `</div>`;
+  container.innerHTML = html;
 }
 
-// 5. RECYCLE BIN: Mobile Cards + Desktop Table
 function renderRecycleBin() {
   const container = $('recycleBinTable');
-  $('badgeBinCount').textContent = appData.recycleBin.length;
-  if (!appData.recycleBin.length) {
-    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">Recycle bin is empty.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/50">`;
-  appData.recycleBin.forEach(o => {
-    mobCards += `
-      <div class="p-4 flex items-center justify-between">
-        <div>
-          <span class="font-mono font-bold text-rose-500 block text-xs">${escapeHtml(o.id)}</span>
-          <span class="font-semibold text-xs text-slate-700 dark:text-slate-300 block">${escapeHtml(o.customer)}</span>
-          <span class="text-[10px] text-slate-400">${new Date(o.deletedAt).toLocaleDateString()}</span>
-        </div>
-        <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3.5 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-xs border border-emerald-300 dark:border-emerald-800 transition-colors">
-          <i class="fa-solid fa-clock-rotate-left"></i> Recover
-        </button>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-700/50 border-b border-slate-200/90 dark:border-slate-700/50 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-3 px-4">Order ID</th>
-            <th class="py-3 px-4">Customer</th>
-            <th class="py-3 px-4">Deleted On</th>
-            <th class="py-3 px-4 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/50">
-          ${appData.recycleBin.map(o => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-3 px-4"><span class="font-mono font-bold text-rose-500 block">${escapeHtml(o.id)}</span></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 dark:text-slate-300">${escapeHtml(o.customer)}</td>
-              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">${new Date(o.deletedAt).toLocaleDateString()}</td>
-              <td class="py-3 px-4 text-right">
-                <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-800 transition-colors">
-                  <i class="fa-solid fa-clock-rotate-left"></i> Recover
-                </button>
-              </td>
-            </tr>`).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
+  if (container) container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">Recycle bin is empty.</div>';
 }
 
-// 6. SALES BY PRODUCT: Mobile Cards + Desktop Table
-function filterSalesByProductTable() {
-  const query = ($('searchProductSales')?.value || '').toLowerCase().trim();
-  const list = cachedProductSales.filter(p => p.name.toLowerCase().includes(query));
-  const container = $('salesByProductTable');
-
-  if (!list.length) {
-    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No product sales found.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(p => {
-    mobCards += `
-      <div class="p-3.5 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openProductStockModalByName('${escapeHtml(p.name)}')">
-        <div>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${escapeHtml(p.name)}</span>
-          <span class="text-[10px] text-slate-400">Click to view stock</span>
-        </div>
-        <div class="text-right">
-          <span class="font-bold text-xs text-indigo-600 dark:text-indigo-400 block">${p.qty} Sold</span>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${money(p.revenue)}</span>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-2.5 px-3">Product Name</th>
-            <th class="py-2.5 px-3 text-center">Qty Sold</th>
-            <th class="py-2.5 px-3 text-right">Revenue</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openProductStockModalByName('${escapeHtml(p.name)}')">
-              <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</td>
-              <td class="py-2.5 px-3 text-center font-bold text-indigo-600 dark:text-indigo-400">${p.qty}</td>
-              <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(p.revenue)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
+function renderReports() {
+  if ($('reportOrdersCount')) $('reportOrdersCount').textContent = appData.orders.length;
 }
 
-// 7. SALES BY INVOICE: Mobile Cards + Desktop Table
-function filterSalesByInvoiceTable() {
-  const query = ($('searchInvoiceSales')?.value || '').toLowerCase().trim();
-  const list = cachedInvoiceSales.filter(i => i.id.toLowerCase().includes(query) || i.customer.toLowerCase().includes(query));
-  const container = $('salesByInvoiceTable');
-
-  if (!list.length) {
-    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No invoice sales found.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(i => {
-    mobCards += `
-      <div class="p-3.5 space-y-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openInvoiceDetailsModal('${i.id}')">
-        <div class="flex items-center justify-between">
-          <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${i.id}</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(i.status)}">${i.status}</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="font-semibold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(i.customer)}</span>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${money(i.revenueNoDeli)}</span>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-2.5 px-3">Invoice ID</th>
-            <th class="py-2.5 px-3">Customer</th>
-            <th class="py-2.5 px-3 text-right">Items Subtotal</th>
-            <th class="py-2.5 px-3 text-center">Status</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(i => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openInvoiceDetailsModal('${i.id}')">
-              <td class="py-2.5 px-3 font-mono font-bold text-indigo-600 dark:text-indigo-400">${i.id}</td>
-              <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(i.customer)}</td>
-              <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(i.revenueNoDeli)}</td>
-              <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(i.status)}">${i.status}</span></td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
+function updateDatalistPresets() {
+  const nameDl = $('productsDatalist');
+  if (nameDl) nameDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.name)}">`).join('');
+  const codeDl = $('productCodesDatalist');
+  if (codeDl) codeDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.code)}">`).join('');
 }
 
 function generateRandomCode() {
-  $('productCode').value = 'BC-' + Math.floor(100 + Math.random() * 900);
+  if ($('productCode')) $('productCode').value = 'BC-' + Math.floor(100 + Math.random() * 900);
 }
 
 function calculateProductProfit() {
-  const cost = Number($('productCostPrice').value) || 0;
-  const selling = Number($('productPrice').value) || 0;
+  const cost = Number($('productCostPrice')?.value) || 0;
+  const selling = Number($('productPrice')?.value) || 0;
   const profit = selling - cost;
-  
-  $('previewProfit').textContent = money(profit);
-  $('previewProfit').className = profit >= 0 ? 'font-bold text-emerald-700 dark:text-emerald-400' : 'font-bold text-rose-600 dark:text-rose-400';
-  $('previewMargin').textContent = selling > 0 ? ((profit / selling) * 100).toFixed(1) + '%' : '0%';
+  if ($('previewProfit')) $('previewProfit').textContent = money(profit);
+  if ($('previewMargin')) $('previewMargin').textContent = selling > 0 ? ((profit / selling) * 100).toFixed(1) + '%' : '0%';
 }
 
 function handleProductSubmit(e) {
@@ -1951,294 +1504,23 @@ function handleProductSubmit(e) {
   const code = $('productCode').value.trim().toUpperCase();
   const name = $('productName').value.trim();
   const costPrice = Number($('productCostPrice').value) || 0;
-  const price = Number($('productPrice').value);
+  const price = Number($('productPrice').value) || 0;
   const poInCount = Number($('productInitialStock').value) || 0;
 
-  if (!code || !name || price < 0 || poInCount < 0 || costPrice < 0) { notify('Invalid input.', 'error'); return; }
-  if (appData.products.find(p => (p.code || '').toUpperCase() === code)) { notify(`Code [${code}] exists.`, 'error'); return; }
-
-  const newProd = {
-    id: 'PRD-' + Math.floor(100 + Math.random() * 900),
-    code, name, costPrice, price, poInCount,
-    poHistory: [{ date: new Date().toISOString(), qty: poInCount }]
-  };
-  appData.products.push(newProd);
+  appData.products.push({ id: 'PRD-' + Date.now(), code, name, costPrice, price, poInCount });
   saveToLocalStorage();
-  $('productCode').value = ''; $('productName').value = ''; $('productCostPrice').value = ''; $('productPrice').value = ''; $('productInitialStock').value = '50';
-  calculateProductProfit();
-  notify('Product added.');
+  $('productCode').value = ''; $('productName').value = '';
+  notify('Product added successfully!');
   renderProducts(); renderStock(); updateDatalistPresets();
 }
 
-function getProductOutStock(product) {
-  let soldCount = 0;
-  const pCode = (product.code || '').toLowerCase().trim();
-  const pName = (product.name || '').toLowerCase().trim();
-
-  appData.orders.forEach(o => {
-    const s = (o.paymentStatus || '').toLowerCase();
-    if (s === 'cancelled' || s === 'return' || s === 'cancelled / return') return;
-    (o.items || []).forEach(it => {
-      if (((it.code||'').toLowerCase().trim() === pCode && pCode) || ((it.name||'').toLowerCase().trim() === pName)) {
-        soldCount += (Number(it.qty) || 0);
-      }
-    });
-  });
-  return soldCount;
-}
-
-function openStockInModal(encodedId) {
-  const prod = appData.products.find(p => String(p.id) === decodeURIComponent(encodedId));
-  if (!prod) return;
-  $('stockInProductId').value = prod.id;
-  $('stockInProductName').textContent = `[${prod.code || 'N/A'}] ${prod.name}`;
-  $('stockInQuantityInput').value = 10;
-  $('stockInModal').classList.remove('hidden');
-}
-
-function closeStockInModal() { $('stockInModal').classList.add('hidden'); }
-
-function confirmStockIn() {
-  const id = $('stockInProductId').value;
-  const qty = Number($('stockInQuantityInput').value);
-  if (isNaN(qty) || qty <= 0) return notify('Invalid quantity.', 'error');
-
-  const prod = appData.products.find(p => String(p.id) === id);
-  if (prod) {
-    prod.poInCount = (Number(prod.poInCount) || 0) + qty;
-    if(!prod.poHistory) prod.poHistory = [];
-    prod.poHistory.push({ date: new Date().toISOString(), qty: qty });
-    saveToLocalStorage();
-    notify(`Added +${qty} units to ${prod.name}`);
-    closeStockInModal();
-    renderStock();
-  }
-}
-
-function showHistoryModal(productId, type) {
-  const prod = appData.products.find(p => String(p.id) === productId);
-  if(!prod) return;
-  
-  $('historyModalTitle').textContent = type === 'in' ? 'PO In Stock History' : 'Out Stock History';
-  $('historyModalSubtitle').textContent = `Product: [${prod.code}] ${prod.name}`;
-  $('historyCol1Header').textContent = 'Date & Details';
-  $('historyCol2Header').textContent = 'Quantity';
-  
-  let historyData = [];
-  
-  if (type === 'in') {
-    historyData = (prod.poHistory || []).map(h => ({ date: h.date, qty: h.qty }));
-  } else {
-    const pCode = (prod.code || '').toLowerCase().trim();
-    const pName = (prod.name || '').toLowerCase().trim();
-    appData.orders.forEach(o => {
-      const s = (o.paymentStatus || '').toLowerCase();
-      if (s === 'cancelled' || s === 'return' || s === 'cancelled / return') return;
-      (o.items || []).forEach(it => {
-        if (((it.code||'').toLowerCase().trim() === pCode && pCode) || ((it.name||'').toLowerCase().trim() === pName)) {
-          let d = o.date;
-          if(!d.includes('T')) d = d + 'T12:00:00.000Z';
-          historyData.push({ date: d, qty: Number(it.qty) || 0, orderId: o.id });
-        }
-      });
-    });
-  }
-
-  historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const tbody = $('historyModalTableBody');
-  if(!historyData.length) {
-    tbody.innerHTML = `<tr><td colspan="2" class="text-center py-6 text-slate-400">No records found.</td></tr>`;
-  } else {
-    tbody.innerHTML = historyData.map(h => `
-      <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
-        <td class="py-2.5 px-3">
-          <div class="font-medium text-slate-800 dark:text-slate-200">${new Date(h.date).toLocaleDateString()}</div>
-          ${h.orderId ? `<div class="text-[10px] text-slate-400 font-mono">Invoice: ${h.orderId}</div>` : '<div class="text-[10px] text-slate-400">Manual Stock In</div>'}
-        </td>
-        <td class="py-2.5 px-3 text-right">
-          <span class="font-bold ${type==='in'?'text-emerald-600 dark:text-emerald-400':'text-rose-600 dark:text-rose-400'}">${type==='in'?'+':'-'}${h.qty}</span>
-        </td>
-      </tr>
-    `).join('');
-  }
-
-  $('stockHistoryModal').classList.remove('hidden');
-}
-
-function openProductStockModalByName(name) {
-  const p = appData.products.find(x => x.name.toLowerCase().trim() === name.toLowerCase().trim());
-  if (p) showHistoryModal(p.id, 'out');
-}
-
-function openInvoiceDetailsModal(orderId) {
-  const o = appData.orders.find(x => String(x.id) === orderId);
-  if (!o) return;
-  
-  $('historyModalTitle').textContent = `Out Stock - Invoice [${o.id}]`;
-  $('historyModalSubtitle').textContent = `Customer: ${o.customer} | Date: ${o.date}`;
-  $('historyCol1Header').textContent = 'Product Name & Price';
-  $('historyCol2Header').textContent = 'Out Qty';
-  
-  const tbody = $('historyModalTableBody');
-  if (!o.items || !o.items.length) {
-    tbody.innerHTML = `<tr><td colspan="2" class="text-center py-6 text-slate-400">No items in this invoice.</td></tr>`;
-  } else {
-    tbody.innerHTML = o.items.map(it => `
-      <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
-        <td class="py-2.5 px-3">
-          <div class="font-medium text-slate-800 dark:text-slate-200">${escapeHtml(it.name)}</div>
-          <div class="text-[10px] text-slate-400 font-mono">${money(it.price)}</div>
-        </td>
-        <td class="py-2.5 px-3 text-right">
-          <span class="font-bold text-rose-600 dark:text-rose-400">-${it.qty}</span>
-        </td>
-      </tr>
-    `).join('');
-  }
-  
-  $('stockHistoryModal').classList.remove('hidden');
-}
-
-function updateDatalistPresets() {
-  const nameDl = $('productsDatalist');
-  if (nameDl) nameDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.name)}">${p.code ? `[${p.code}] ` : ''}${escapeHtml(p.name)}</option>`).join('');
-  const codeDl = $('productCodesDatalist');
-  if (codeDl) codeDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.code)}">${escapeHtml(p.name)} - ${money(p.price)}</option>`).join('');
-}
-
-function applyNotePreset(val) {
-  if (!val) return;
-  const current = $('note').value.trim();
-  $('note').value = current ? current + ' ' + val : val;
-}
-
-function setReportTimeline(type) {
-  const now = new Date();
-  if (type === 'today') {
-    const todayStr = now.toISOString().split('T')[0];
-    $('reportStart').value = todayStr;
-    $('reportEnd').value = todayStr;
-  } else if (type === 'month') {
-    const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
-    const todayStr = now.toISOString().split('T')[0];
-    $('reportStart').value = firstDay;
-    $('reportEnd').value = todayStr;
-  } else {
-    $('reportStart').value = '';
-    $('reportEnd').value = '';
-  }
-  renderReports();
-}
-
-function renderReports() {
-  const startStr = $('reportStart').value;
-  const endStr = $('reportEnd').value;
-  
-  let validOrders = appData.orders;
-  if (startStr && endStr) {
-    const start = new Date(startStr); start.setHours(0,0,0,0);
-    const end = new Date(endStr); end.setHours(23,59,59,999);
-    validOrders = validOrders.filter(o => {
-      const d = new Date(o.date);
-      return d >= start && d <= end;
-    });
-  }
-
-  let totalCost = 0, totalSelling = 0, totalDelivery = 0;
-  let paidRevNoDeli = 0, pendingRevNoDeli = 0;
-  let productSalesMap = {};
-  let invoiceSalesList = [];
-
-  validOrders.forEach(o => {
-    const s = (o.paymentStatus || '').toLowerCase();
-    const isCancelled = (s === 'cancelled' || s === 'return' || s === 'cancelled / return');
-    
-    let orderItemsSubtotal = 0;
-    (o.items || []).forEach(it => {
-      const qty = Number(it.qty) || 0;
-      const sellPrice = Number(it.price) || 0;
-      const itemSub = sellPrice * qty;
-      orderItemsSubtotal += itemSub;
-
-      if (!isCancelled) {
-        totalSelling += itemSub;
-
-        const pCode = (it.code || '').toLowerCase().trim();
-        let costPrice = 0;
-        const p = appData.products.find(x => (x.code || '').toLowerCase().trim() === pCode);
-        if (p) costPrice = Number(p.costPrice) || 0;
-        else costPrice = Math.round(sellPrice * 0.7);
-        totalCost += (costPrice * qty);
-
-        const pName = it.name || 'Unknown Item';
-        if (!productSalesMap[pName]) productSalesMap[pName] = { name: pName, qty: 0, revenue: 0 };
-        productSalesMap[pName].qty += qty;
-        productSalesMap[pName].revenue += itemSub;
-      }
-    });
-
-    if (!isCancelled) {
-      totalDelivery += (Number(o.delivery) || 0);
-
-      if (s === 'paid') paidRevNoDeli += orderItemsSubtotal;
-      if (s === 'pending') pendingRevNoDeli += orderItemsSubtotal;
-
-      invoiceSalesList.push({
-        id: o.id,
-        date: o.date,
-        customer: o.customer,
-        revenueNoDeli: orderItemsSubtotal,
-        status: o.paymentStatus
-      });
-    }
-  });
-
-  const totalProfit = totalSelling - totalCost;
-
-  $('reportOrdersCount').textContent = validOrders.length;
-  $('reportCollected').textContent = money(paidRevNoDeli);
-  $('reportPendingCol').textContent = money(pendingRevNoDeli);
-
-  $('reportCost').textContent = money(totalCost);
-  $('reportSelling').textContent = money(totalSelling);
-  $('reportProfit').textContent = money(totalProfit);
-  $('reportProfit').className = totalProfit >= 0 ? 'text-xl font-black text-emerald-700 dark:text-emerald-300 mt-1' : 'text-xl font-black text-rose-700 dark:text-rose-300 mt-1';
-  $('reportDelivery').textContent = money(totalDelivery);
-
-  cachedProductSales = Object.values(productSalesMap).sort((a,b) => b.revenue - a.revenue);
-  cachedInvoiceSales = invoiceSalesList.sort((a,b) => b.revenueNoDeli - a.revenueNoDeli);
-
-  filterSalesByProductTable();
-  filterSalesByInvoiceTable();
-}
-
-function exportCSV() {
-  const headers = ['Order ID', 'Date', 'Channel', 'Customer', 'Phone', 'Address', 'Products Summary', 'Delivery', 'Total', 'Payment Method', 'Payment Status', 'Transaction ID', 'Notes'];
-  const rows = appData.orders.map(o => {
-    const summary = (o.items || []).map(i => `${i.code ? `[${i.code}] ` : ''}${i.name} (${money(i.price)} x ${i.qty})`).join('; ');
-    return [o.id, o.date, o.channel || 'Other', o.customer, o.phone, o.address, summary, o.delivery, o.total, o.payment, o.paymentStatus, o.transaction, o.note];
-  });
-  const csvContent = [headers, ...rows].map(row => row.map(cell => `"${String(cell ?? '').replace(/"/g, '""')}"`).join(',')).join('\r\n');
-  const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = `brick-and-chill-orders-${new Date().toISOString().split('T')[0]}.csv`;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-  notify('Exported to CSV.');
-}
-
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const currentTheme = localStorage.getItem('bc_theme') || 'auto';
   updateThemeUI(currentTheme);
   loadData();
-  
-  // Google Sheets ဆီမှ အချက်အလက်များ လှမ်းယူခြင်း
-  fetchOrdersFromCloud();
-
-  startNewOrder();
-  calculateProductProfit();
+  renderAll();
   showPage('dashboard');
+  fetchOrdersFromCloud();
 });
 </script>
 </body>
