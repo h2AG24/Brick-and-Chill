@@ -951,29 +951,33 @@ function fetchOrdersFromCloud() {
     .then(data => {
       if (Array.isArray(data) && data.length > 0) {
         appData.orders = data.map(row => {
-          let dateStr = row["Date"] ? String(row["Date"]) : "";
+          let dateStr = row.date || row["Date"] ? String(row.date || row["Date"]) : "";
           if (dateStr.includes("T")) dateStr = dateStr.split("T")[0];
 
+          const itemsText = row.itemsSummary || row["Products Summary"] || "Order Items";
+          const totalVal = Number(row.total) || Number(row["Total"]) || Number(row["Total (Ks)"]) || 0;
+          const deliVal = Number(row.delivery) || Number(row["Delivery"]) || Number(row["Delivery (Ks)"]) || 0;
+
           return {
-            id: row["Order ID"] || row.id || "ORD-" + Math.floor(1000 + Math.random() * 9000),
+            id: String(row.id || row["Order ID"] || "ORD-" + Math.floor(1000 + Math.random() * 9000)),
             date: dateStr || new Date().toISOString().split("T")[0],
-            channel: row["Channel"] || "Other",
-            customer: row["Customer"] || "Customer",
-            phone: String(row["Phone"] || ""),
-            address: row["Address"] || "",
-            items: [{ name: row["Products Summary"] || "Order Items", price: Number(row["Total"]) || 0, qty: 1 }],
-            delivery: Number(row["Delivery"]) || Number(row["Delivery (Ks)"]) || 0,
-            total: Number(row["Total"]) || Number(row["Total (Ks)"]) || 0,
-            payment: row["Payment"] || "Cash on Delivery",
-            paymentStatus: row["Payment Status"] || "Pending",
-            transaction: String(row["Transaction ID"] || ""),
-            note: row["Notes"] || ""
+            channel: row.channel || row["Channel"] || "Other",
+            customer: row.customer || row["Customer"] || "-",
+            phone: String(row.phone || row["Phone"] || "-"),
+            address: row.address || row["Address"] || "",
+            items: [{ name: itemsText, price: totalVal, qty: 1 }],
+            delivery: deliVal,
+            total: totalVal,
+            payment: row.payment || row["Payment"] || "Cash on Delivery",
+            paymentStatus: row.paymentStatus || row["Payment Status"] || "Pending",
+            transaction: String(row.transaction || row["Transaction ID"] || ""),
+            note: row.note || row["Notes"] || ""
           };
         });
 
         saveToLocalStorage();
         renderAll();
-        notify("Orders synced across all devices!", "ok");
+        notify("Orders synced accurately!", "ok");
         const badge = $('syncStatusBadge');
         if (badge) badge.classList.remove('hidden');
       }
@@ -1694,7 +1698,7 @@ function renderStock() {
             <button onclick="showHistoryModal('${p.id}', 'in')" class="px-2 py-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-300 font-mono font-bold text-[11px]" title="PO In History">
               PO: ${poIn}
             </button>
-            <button onclick="showHistoryModal('${p.id}', 'out')" class="px-2 py-1 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 px-2.5 py-1 rounded-md border border-rose-200 dark:border-rose-800 transition-colors" title="View Out History">
+            <button onclick="showHistoryModal('${p.id}', 'out')" class="px-2 py-1 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 border border-rose-200 dark:border-rose-800 rounded-lg text-rose-600 dark:text-rose-400 font-mono font-bold text-[11px]" title="Sold Out History">
               Out: ${outStock}
             </button>
           </div>
@@ -2207,380 +2211,6 @@ function renderReports() {
 
   filterSalesByProductTable();
   filterSalesByInvoiceTable();
-}
-
-function showPage(page) {
-  document.querySelectorAll('main section').forEach(sec => sec.classList.add('hidden'));
-  const target = $('page-' + page);
-  if (target) target.classList.remove('hidden');
-
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.classList.remove('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-slate-200');
-  });
-
-  const activeBtn = $('nav-' + page);
-  if (activeBtn) {
-    activeBtn.classList.add('bg-white', 'dark:bg-slate-700', 'text-indigo-600', 'dark:text-indigo-400', 'shadow-sm', 'border', 'border-slate-200/80');
-  }
-
-  ['dashboard', 'orders', 'products', 'reports'].forEach(p => {
-    const mobBtn = $('mob-nav-' + p);
-    if(mobBtn) {
-      if(page === p || (p === 'products' && (page === 'stock' || page === 'recyclebin'))) {
-        mobBtn.classList.add('text-indigo-600', 'dark:text-indigo-400');
-        mobBtn.classList.remove('text-slate-500', 'dark:text-slate-400');
-      } else {
-        mobBtn.classList.remove('text-indigo-600', 'dark:text-indigo-400');
-        mobBtn.classList.add('text-slate-500', 'dark:text-slate-400');
-      }
-    }
-  });
-
-  const titles = {
-    dashboard: ['Dashboard', 'Brick and Chill - Store Overview'],
-    orders: ['Orders Directory', 'Search by Invoice ID, customer, phone, or modify records'],
-    neworder: [$('editOrderId').value ? 'Edit Order' : 'Create New Order', 'Fill in customer and delivery information'],
-    products: ['Products List & Pricing', 'Product codes, cost, selling price and profit margins'],
-    stock: ['Stock Control', 'Real-time PO In, Out Sold, and Remaining stock balance'],
-    recyclebin: ['Recycle Bin', '30-day retention protection. Recover deleted orders safely.'],
-    reports: ['Sales & Financial Reports', 'Timeline analytics without delivery fees in revenue']
-  };
-
-  const [t, sub] = titles[page] || ['Dashboard', 'Overview'];
-  $('pageTitle').textContent = t;
-  $('pageSubTitle').textContent = sub;
-
-  if (page === 'dashboard') renderDashboard();
-  if (page === 'orders') renderOrders();
-  if (page === 'products') renderProducts();
-  if (page === 'stock') renderStock();
-  if (page === 'recyclebin') renderRecycleBin();
-  if (page === 'reports') renderReports();
-}
-
-function renderAll() {
-  $('badgeOrderCount').textContent = appData.orders.length;
-  $('mobBadgeOrderCount').textContent = appData.orders.length;
-  $('badgeBinCount').textContent = appData.recycleBin.length;
-  
-  const now = new Date();
-  const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
-  const todayStr = now.toISOString().split('T')[0];
-  if(!$('reportStart').value) $('reportStart').value = firstDay;
-  if(!$('reportEnd').value) $('reportEnd').value = todayStr;
-
-  renderDashboard();
-  renderOrders();
-  renderProducts();
-  renderStock();
-  renderReports();
-  updateDatalistPresets();
-}
-
-function debouncedSearch() {
-  clearTimeout(searchDebounceTimer);
-  searchDebounceTimer = setTimeout(() => { currentPage = 1; renderOrders(); }, 250);
-}
-
-function resetPageAndRender() { currentPage = 1; renderOrders(); }
-
-function renderOrders() {
-  const container = $('ordersTable');
-  if (!container) return;
-
-  const query = ($('orderSearch')?.value || '').toLowerCase().trim();
-  const chFilter = $('channelFilter')?.value || '';
-  const statusFilter = $('orderFilter')?.value || '';
-
-  const filtered = appData.orders.filter(o => {
-    const itemsText = (o.items || []).map(i => `${i.code || ''} ${i.name}`).join(' ');
-    const searchString = [o.id, o.customer, o.phone, itemsText, o.address, o.channel, o.transaction].join(' ').toLowerCase();
-    const matchQuery = !query || searchString.includes(query);
-    const matchChannel = !chFilter || (o.channel || 'Other').toLowerCase() === chFilter.toLowerCase();
-    
-    let matchStatus = true;
-    if (statusFilter) {
-      const s = (o.paymentStatus || '').toLowerCase();
-      if (statusFilter === 'Cancelled') matchStatus = s === 'cancelled' || s === 'return' || s === 'cancelled / return';
-      else matchStatus = s === statusFilter.toLowerCase();
-    }
-    return matchQuery && matchChannel && matchStatus;
-  });
-
-  const totalItems = filtered.length;
-  const totalPages = Math.ceil(totalItems / pageSize) || 1;
-  if (currentPage > totalPages) currentPage = totalPages;
-
-  const startIdx = (currentPage - 1) * pageSize;
-  const endIdx = Math.min(startIdx + pageSize, totalItems);
-  
-  container.innerHTML = generateOrdersTable(filtered.slice(startIdx, endIdx));
-  $('paginationStart').textContent = totalItems > 0 ? startIdx + 1 : 0;
-  $('paginationEnd').textContent = endIdx;
-  $('paginationTotal').textContent = totalItems;
-
-  $('paginationControls').innerHTML = `
-    <button onclick="changePage(${currentPage - 1})" ${currentPage <= 1 ? 'disabled class="opacity-40"' : ''} class="px-2.5 py-1 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300">
-      <i class="fa-solid fa-chevron-left text-[10px]"></i>
-    </button>
-    <span class="px-2 font-bold text-slate-700 dark:text-slate-200">${currentPage} / ${totalPages}</span>
-    <button onclick="changePage(${currentPage + 1})" ${currentPage >= totalPages ? 'disabled class="opacity-40"' : ''} class="px-2.5 py-1 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300">
-      <i class="fa-solid fa-chevron-right text-[10px]"></i>
-    </button>
-  `;
-}
-function changePage(p) { currentPage = p; renderOrders(); }
-
-function syncFormStatusOptions(selectedStatus = null) {
-  const isCOD = $('payment').value === 'Cash on Delivery';
-  const sel = $('paymentStatus');
-  const prevVal = selectedStatus || sel.value || 'Pending';
-  sel.innerHTML = `
-    <option value="Pending" class="dark:bg-slate-800 dark:text-slate-200">Pending</option>
-    <option value="Paid" class="dark:bg-slate-800 dark:text-slate-200">Paid</option>
-    ${isCOD ? '<option value="Delivery Pick Up" class="dark:bg-slate-800 dark:text-slate-200">Delivery Pick Up</option>' : ''}
-    <option value="Cancelled" class="dark:bg-slate-800 dark:text-slate-200">Cancelled / Return</option>`;
-  sel.value = (prevVal === 'Delivery Pick Up' && !isCOD) ? 'Pending' : prevVal;
-}
-
-function addProductItemRow(code = '', name = '', price = 0, qty = 1) {
-  const container = $('productItemsContainer');
-  const rowId = 'row-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
-  const div = document.createElement('div');
-  div.id = rowId;
-  div.className = 'product-row p-3.5 bg-slate-50/90 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl space-y-2';
-
-  div.innerHTML = `
-    <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
-      <div class="sm:col-span-3">
-        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Product Code</label>
-        <input type="text" placeholder="e.g. BC-101" value="${escapeHtml(code)}" list="productCodesDatalist" oninput="handleCodeAutoFill('${rowId}', this.value)"
-          class="item-code glass-input w-full px-3 py-2 rounded-lg text-xs font-mono uppercase outline-none font-bold text-indigo-700 dark:text-indigo-400">
-      </div>
-      <div class="sm:col-span-4">
-        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Name *</label>
-        <input type="text" required placeholder="Name" value="${escapeHtml(name)}" list="productsDatalist"
-          class="item-name glass-input w-full px-3 py-2 rounded-lg text-xs outline-none">
-      </div>
-      <div class="sm:col-span-2">
-        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Price *</label>
-        <input type="number" min="0" step="any" required value="${price || 0}" oninput="calculateOrder()"
-          class="item-price glass-input w-full px-3 py-2 rounded-lg text-xs outline-none font-semibold text-slate-800 dark:text-slate-200">
-      </div>
-      <div class="sm:col-span-2">
-        <label class="block text-[10px] font-bold text-slate-600 dark:text-slate-400 mb-1">Qty *</label>
-        <input type="number" min="1" step="1" required value="${qty || 1}" oninput="calculateOrder()"
-          class="item-qty glass-input w-full px-3 py-2 rounded-lg text-xs outline-none">
-      </div>
-      <div class="sm:col-span-1 flex justify-end">
-        <button type="button" onclick="removeProductItemRow('${rowId}')" title="Delete Row" 
-          class="p-2 text-slate-400 hover:text-rose-600 rounded-lg transition-colors">
-          <i class="fa-solid fa-trash-can text-sm"></i>
-        </button>
-      </div>
-    </div>
-  `;
-  container.appendChild(div);
-  calculateOrder();
-}
-
-function handleCodeAutoFill(rowId, inputCode) {
-  if (!inputCode) return;
-  const matched = appData.products.find(p => (p.code || '').toUpperCase() === inputCode.trim().toUpperCase());
-  if (matched) {
-    const row = document.getElementById(rowId);
-    if (!row) return;
-    row.querySelector('.item-name').value = matched.name;
-    row.querySelector('.item-price').value = matched.price;
-    calculateOrder();
-  }
-}
-
-function removeProductItemRow(rowId) {
-  const rows = $('productItemsContainer').querySelectorAll('.product-row');
-  if (rows.length <= 1) { notify('At least one product item is required.', 'error'); return; }
-  document.getElementById(rowId)?.remove();
-  calculateOrder();
-}
-
-function calculateOrder() {
-  const rows = document.querySelectorAll('.product-row');
-  let totalQty = 0, subtotal = 0;
-  rows.forEach(r => {
-    const p = Number(r.querySelector('.item-price')?.value) || 0;
-    const q = Number(r.querySelector('.item-qty')?.value) || 0;
-    totalQty += q; subtotal += (p * q);
-  });
-  const delivery = Number($('delivery').value) || 0;
-  $('summaryQty').textContent = totalQty;
-  $('subtotalText').textContent = money(subtotal);
-  $('deliveryText').textContent = money(delivery);
-  $('totalText').textContent = money(subtotal + delivery);
-}
-
-function startNewOrder() {
-  $('editOrderId').value = '';
-  $('orderForm').reset();
-  $('delivery').value = 0;
-  $('channel').value = 'Facebook';
-  $('payment').value = 'Cash on Delivery';
-  syncFormStatusOptions('Pending');
-
-  $('productItemsContainer').innerHTML = '';
-  addProductItemRow('', '', 0, 1);
-
-  $('orderFormHeaderTitle').textContent = 'Create New Order';
-  $('orderFormHeaderSub').textContent = 'Enter order details and customer delivery address';
-  $('editingOrderIdBadge').classList.add('hidden');
-  $('submitBtnText').textContent = 'Save Order';
-  calculateOrder();
-  showPage('neworder');
-}
-
-function editOrder(encodedId) {
-  const id = decodeURIComponent(encodedId);
-  const order = appData.orders.find(o => String(o.id) === id);
-  if (!order) return;
-
-  $('editOrderId').value = order.id;
-  $('customer').value = order.customer || '';
-  $('phone').value = order.phone || '';
-  $('address').value = order.address || '';
-  $('channel').value = order.channel || 'Facebook';
-  $('delivery').value = order.delivery || 0;
-  $('payment').value = order.payment || 'Cash on Delivery';
-  syncFormStatusOptions(order.paymentStatus || 'Pending');
-  $('transaction').value = order.transaction || '';
-  $('note').value = order.note || '';
-
-  $('productItemsContainer').innerHTML = '';
-  const items = (order.items && order.items.length) ? order.items : [{ code: '', name: '', price: 0, qty: 1 }];
-  items.forEach(it => addProductItemRow(it.code || '', it.name, it.price, it.qty));
-
-  $('orderFormHeaderTitle').textContent = `Edit Order: ${order.id}`;
-  $('orderFormHeaderSub').textContent = 'Update details and save modifications';
-  $('editingOrderIdBadge').textContent = order.id;
-  $('editingOrderIdBadge').classList.remove('hidden');
-  $('submitBtnText').textContent = 'Update Order';
-  calculateOrder();
-  showPage('neworder');
-}
-
-function handleOrderSubmit(e) {
-  e.preventDefault();
-  if (isSaving) return;
-
-  const editId = $('editOrderId').value.trim();
-  const delivery = Number($('delivery').value) || 0;
-  const paymentStatus = $('paymentStatus').value;
-  
-  const items = [];
-  document.querySelectorAll('.product-row').forEach(r => {
-    const code = r.querySelector('.item-code')?.value.trim() || '';
-    const name = r.querySelector('.item-name')?.value.trim();
-    const price = Number(r.querySelector('.item-price')?.value);
-    const qty = Number(r.querySelector('.item-qty')?.value);
-    if (name && qty > 0) items.push({ code, name, price, qty });
-  });
-
-  if (!items.length) { notify('Please add at least one product.', 'error'); return; }
-
-  const payload = {
-    customer: $('customer').value.trim(), phone: $('phone').value.trim(), address: $('address').value.trim(),
-    channel: $('channel').value, items, delivery, total: items.reduce((s, it) => s + (it.price * it.qty), 0) + delivery,
-    payment: $('payment').value, paymentStatus, transaction: $('transaction').value.trim(), note: $('note').value.trim()
-  };
-
-  isSaving = true; $('saveOrderBtn').disabled = true;
-
-  if (editId) {
-    payload.id = editId;
-    const idx = appData.orders.findIndex(o => String(o.id) === String(editId));
-    if (idx !== -1) {
-      payload.date = appData.orders[idx].date || new Date().toISOString().split('T')[0];
-      appData.orders[idx] = { ...appData.orders[idx], ...payload };
-      saveToLocalStorage();
-      notify(`Order [${editId}] updated successfully!`);
-      isSaving = false; $('saveOrderBtn').disabled = false;
-      renderAll();
-      startNewOrder();
-    }
-  } else {
-    payload.id = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
-    payload.date = new Date().toISOString().split('T')[0];
-    appData.orders.unshift(payload);
-    saveToLocalStorage();
-
-    // Google Sheets သို့ အလိုအလျောက် ပေးပို့ခြင်း
-    syncToGoogleSheet(payload);
-
-    notify(`Order #[${payload.id}] created successfully!`);
-    isSaving = false; $('saveOrderBtn').disabled = false;
-    renderAll();
-    startNewOrder();
-  }
-}
-
-function requestDeleteOrder(encodedId) {
-  const id = decodeURIComponent(encodedId);
-  pendingDelete = { type: 'order', id: id };
-  $('deleteModalTitle').textContent = 'Delete Order (ဖျက်ရန် အတည်ပြုပါ)';
-  $('deleteModalDesc').textContent = `Are you sure you want to delete order [${id}]?`;
-  $('deleteModalTargetId').textContent = id;
-  $('deleteConfirmModal').classList.remove('hidden');
-}
-
-function requestDeleteProduct(encodedId) {
-  const id = decodeURIComponent(encodedId);
-  const p = appData.products.find(x => String(x.id) === id);
-  pendingDelete = { type: 'product', id: id };
-  $('deleteModalTitle').textContent = 'Delete Product (ဖျက်ရန် အတည်ပြုပါ)';
-  $('deleteModalDesc').textContent = `Are you sure you want to delete product "${p ? p.name : id}"?`;
-  $('deleteModalTargetId').textContent = p ? `[${p.code}] ${p.name}` : id;
-  $('deleteConfirmModal').classList.remove('hidden');
-}
-
-function closeDeleteConfirmModal() {
-  $('deleteConfirmModal').classList.add('hidden');
-  pendingDelete = null;
-}
-
-function executeDeleteConfirm() {
-  if (!pendingDelete) return;
-  if (pendingDelete.type === 'order') {
-    const id = pendingDelete.id;
-    const idx = appData.orders.findIndex(x => String(x.id) === id);
-    if (idx > -1) {
-      const order = appData.orders.splice(idx, 1)[0];
-      order.deletedAt = new Date().toISOString();
-      appData.recycleBin.push(order);
-      saveToLocalStorage();
-      notify(`Order [${id}] moved to Recycle Bin.`);
-      renderAll();
-    }
-  } else if (pendingDelete.type === 'product') {
-    const id = pendingDelete.id;
-    appData.products = appData.products.filter(p => String(p.id) !== id);
-    saveToLocalStorage();
-    notify(`Product deleted successfully.`);
-    renderProducts(); renderStock(); updateDatalistPresets();
-  }
-  closeDeleteConfirmModal();
-}
-
-function recoverOrder(encodedId) {
-  const id = decodeURIComponent(encodedId);
-  const idx = appData.recycleBin.findIndex(o => String(o.id) === id);
-  if (idx > -1) {
-    const order = appData.recycleBin.splice(idx, 1)[0];
-    delete order.deletedAt;
-    appData.orders.push(order);
-    appData.orders.sort((a,b) => new Date(b.date) - new Date(a.date));
-    saveToLocalStorage();
-    notify(`Order ${id} recovered.`);
-    renderAll();
-    if(!$('page-recyclebin').classList.contains('hidden')) renderRecycleBin();
-  }
 }
 
 function exportCSV() {
