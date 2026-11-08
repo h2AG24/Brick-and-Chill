@@ -274,7 +274,6 @@
         </div>
       </div>
       <div class="flex items-center gap-2 sm:gap-4">
-        <!-- Theme Switcher -->
         <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur border border-slate-200/90 dark:border-slate-700 rounded-xl p-1 flex items-center text-slate-400">
           <button onclick="setTheme('light')" id="theme-btn-light" title="Light" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-sun text-xs"></i></button>
           <button onclick="setTheme('dark')" id="theme-btn-dark" title="Dark" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center transition-all hover:text-slate-800 dark:hover:text-white"><i class="fa-solid fa-moon text-xs"></i></button>
@@ -288,7 +287,6 @@
       </div>
     </header>
 
-    <!-- Return / Cancel Notification Banner -->
     <div id="returnBanner" class="hidden mx-4 sm:mx-6 mt-4 p-4 rounded-2xl bg-rose-50/90 dark:bg-rose-900/40 backdrop-blur border border-rose-300 dark:border-rose-800 flex items-start justify-between gap-3 shadow-sm">
       <div class="flex items-start gap-3">
         <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-800 text-rose-600 dark:text-rose-300 flex items-center justify-center shrink-0 mt-0.5">
@@ -304,10 +302,9 @@
       </button>
     </div>
 
-    <!-- Toast Notification Container -->
     <div id="toastContainer" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
 
-    <!-- Status Confirmation Dialog Modal -->
+    <!-- Status Change Modal -->
     <div id="statusConfirmModal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
       <div class="glass-panel rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200/90 dark:border-slate-700">
         <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-4">
@@ -695,13 +692,13 @@
       <!-- ================= PAGE: PRODUCTS ================= -->
       <section id="page-products" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
+          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Products List</button>
+          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock Control</button>
           <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
         </div>
 
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-          <div class="xl:col-span-1 glass-panel p-4 sm:p-5 rounded-2xl self-start">
+          <div class="xl:col-span-1 glass-panel p-5 rounded-2xl self-start">
             <h3 class="font-bold text-slate-900 dark:text-white mb-1">Add Product & Pricing</h3>
             <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Set cost, selling price and initial stock</p>
 
@@ -753,7 +750,7 @@
             </form>
           </div>
 
-          <div class="xl:col-span-2 glass-panel rounded-2xl p-4 sm:p-5 space-y-4">
+          <div class="xl:col-span-2 glass-panel rounded-2xl p-5 space-y-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/90 dark:border-slate-700 pb-3">
               <div>
                 <h3 class="font-bold text-slate-900 dark:text-white">Products Catalog</h3>
@@ -770,12 +767,12 @@
       <!-- ================= PAGE: STOCK CONTROL ================= -->
       <section id="page-stock" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Stock</button>
+          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products List</button>
+          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white">Stock Control</button>
           <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Recycle Bin</button>
         </div>
 
-        <div class="glass-panel rounded-2xl p-4 sm:p-5 space-y-4">
+        <div class="glass-panel rounded-2xl p-5 space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/90 dark:border-slate-700 pb-3">
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white">Stock Control & Inventory Balance</h3>
@@ -790,12 +787,12 @@
       <!-- ================= PAGE: RECYCLE BIN ================= -->
       <section id="page-recyclebin" class="space-y-6 hidden">
         <div class="flex items-center gap-2 pb-2 border-b border-slate-200/90 dark:border-slate-700 md:hidden">
-          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products</button>
-          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock</button>
+          <button onclick="showPage('products')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Products List</button>
+          <button onclick="showPage('stock')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Stock Control</button>
           <button onclick="showPage('recyclebin')" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-rose-600 text-white">Recycle Bin</button>
         </div>
 
-        <div class="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col min-h-[400px]">
+        <div class="glass-panel rounded-2xl p-5 flex flex-col min-h-[400px]">
           <div class="flex items-center justify-between border-b border-slate-200/90 dark:border-slate-700 pb-4 mb-4">
             <div>
               <h3 class="font-bold text-slate-900 dark:text-white">Deleted Orders (Recycle Bin)</h3>
@@ -1259,7 +1256,6 @@ function printInvoice(encodedId) {
   win.document.close();
 }
 
-// 1. ORDERS DIRECTORY: Mobile Cards + Desktop Table
 function generateOrdersTable(ordersList) {
   if (!ordersList || !ordersList.length) return '<div class="p-8 text-center text-slate-400 text-xs">No orders found.</div>';
   
@@ -1287,13 +1283,13 @@ function generateOrdersTable(ordersList) {
           </div>
         </div>
 
-        <div class="p-2.5 bg-slate-50/90 dark:bg-slate-800/60 rounded-xl border border-slate-200/70 dark:border-slate-700/50 text-[11px]">
+        <div class="p-2 bg-slate-50/90 dark:bg-slate-800/60 rounded-xl border border-slate-200/70 dark:border-slate-700/50 text-[11px]">
           ${formatProductSummary(o)}
         </div>
 
         <div class="flex items-center justify-between pt-1">
           <div>${renderStatusSelectHtml(o)}</div>
-          <div class="flex items-center gap-1.5">
+          <div class="flex items-center gap-1">
             <button onclick="printInvoice('${encodeURIComponent(o.id)}')" title="Print" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
               <i class="fa-solid fa-print text-xs"></i>
             </button>
@@ -1368,361 +1364,6 @@ function generateOrdersTable(ordersList) {
   `;
 
   return mobCards + deskTable;
-}
-
-// 2. PRODUCTS LIST: Mobile Cards + Desktop Table
-function renderProducts() {
-  const container = $('productsTable');
-  if (!container) return;
-  const list = appData.products;
-  $('productCountBadge').textContent = list.length + ' Items';
-
-  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(p => {
-    const cost = Number(p.costPrice) || 0;
-    const selling = Number(p.price) || 0;
-    const profit = selling - cost;
-    mobCards += `
-      <div class="p-4 space-y-2">
-        <div class="flex justify-between items-start">
-          <div>
-            <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-          </div>
-          <button onclick="requestDeleteProduct('${encodeURIComponent(p.id)}')" title="Delete" class="p-1.5 text-slate-400 hover:text-rose-600 rounded">
-            <i class="fa-solid fa-trash-can text-xs"></i>
-          </button>
-        </div>
-        <div class="flex justify-between items-center text-xs pt-1">
-          <div>
-            <span class="text-[10px] text-slate-400 block">Cost: ${money(cost)}</span>
-            <span class="font-bold text-slate-800 dark:text-slate-200">Sell: ${money(selling)}</span>
-          </div>
-          <div class="text-right">
-            <span class="font-bold text-emerald-700 dark:text-emerald-400 block">${money(profit)}</span>
-            <span class="text-[9px] text-slate-400 font-semibold">${selling > 0 ? ((profit/selling)*100).toFixed(0) : 0}% Margin</span>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left text-xs border-collapse">
-        <thead>
-          <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-            <th class="py-2.5 px-3">Product</th>
-            <th class="py-2.5 px-3">Cost / Sell</th>
-            <th class="py-2.5 px-3">Profit (အမြတ်)</th>
-            <th class="py-2.5 px-3 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => {
-            const cost = Number(p.costPrice) || 0;
-            const selling = Number(p.price) || 0;
-            const profit = selling - cost;
-            return `
-              <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-                <td class="py-2.5 px-3">
-                  <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-                  <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-                </td>
-                <td class="py-2.5 px-3">
-                  <div class="text-[10px] text-slate-400">Cost: ${money(cost)}</div>
-                  <div class="font-bold text-slate-800 dark:text-slate-200">Sell: ${money(selling)}</div>
-                </td>
-                <td class="py-2.5 px-3">
-                  <span class="font-bold text-emerald-700 dark:text-emerald-400">${money(profit)}</span>
-                  <span class="text-[9px] text-slate-400 block">${selling > 0 ? ((profit/selling)*100).toFixed(0) : 0}% Margin</span>
-                </td>
-                <td class="py-2.5 px-3 text-right">
-                  <button onclick="requestDeleteProduct('${encodeURIComponent(p.id)}')" title="Delete Product" class="p-1.5 text-slate-400 hover:text-rose-600 rounded transition-colors">
-                    <i class="fa-solid fa-trash-can"></i>
-                  </button>
-                </td>
-              </tr>
-            `;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
-}
-
-// 3. STOCK CONTROL: Mobile Cards + Desktop Table
-function renderStock() {
-  const container = $('stockTable');
-  if (!container) return;
-  const list = appData.products;
-  $('productStockCountBadge').textContent = list.length + ' Items';
-
-  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(p => {
-    const poIn = Number(p.poInCount) || 0;
-    const outStock = getProductOutStock(p);
-    const remaining = poIn - outStock;
-    let stockBadgeClass = 'bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800';
-    if (remaining <= 5) stockBadgeClass = 'bg-rose-50 text-rose-700 border border-rose-300 font-bold dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800';
-    else if (remaining <= 15) stockBadgeClass = 'bg-amber-50 text-amber-700 border border-amber-300 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800';
-
-    mobCards += `
-      <div class="p-4 space-y-2.5">
-        <div class="flex justify-between items-center">
-          <div>
-            <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-            <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-          </div>
-          <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold ${stockBadgeClass}">
-            ${remaining} In Stock
-          </span>
-        </div>
-
-        <div class="flex items-center justify-between text-xs pt-1">
-          <div class="flex items-center gap-2">
-            <button onclick="showHistoryModal('${p.id}', 'in')" class="px-2 py-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-700 dark:text-slate-300 font-mono font-bold text-[11px]" title="PO In History">
-              PO: ${poIn}
-            </button>
-            <button onclick="showHistoryModal('${p.id}', 'out')" class="px-2 py-1 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 border border-rose-200 dark:border-rose-800 rounded-lg text-rose-600 dark:text-rose-400 font-mono font-bold text-[11px]" title="Sold Out History">
-              Out: ${outStock}
-            </button>
-          </div>
-          <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-850">
-            <i class="fa-solid fa-plus text-[10px]"></i> Add Stock
-          </button>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead>
-          <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-            <th class="py-2.5 px-3">Product Name</th>
-            <th class="py-2.5 px-3 text-center">In (PO)</th>
-            <th class="py-2.5 px-3 text-center">Out (Sold)</th>
-            <th class="py-2.5 px-3 text-center">In Stock</th>
-            <th class="py-2.5 px-3 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => {
-            const poIn = Number(p.poInCount) || 0;
-            const outStock = getProductOutStock(p);
-            const remaining = poIn - outStock;
-            let stockBadgeClass = 'bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800';
-            if (remaining <= 5) stockBadgeClass = 'bg-rose-50 text-rose-700 border border-rose-300 font-bold dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800';
-            else if (remaining <= 15) stockBadgeClass = 'bg-amber-50 text-amber-700 border border-amber-300 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800';
-
-            return `
-              <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
-                <td class="py-2.5 px-3">
-                  <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
-                  <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <button onclick="showHistoryModal('${p.id}', 'in')" class="font-mono font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 px-2.5 py-1 rounded-md transition-colors" title="View In History">${poIn}</button>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <button onclick="showHistoryModal('${p.id}', 'out')" class="font-mono font-bold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 border border-rose-200 dark:border-rose-800 transition-colors" title="View Out History">${outStock}</button>
-                </td>
-                <td class="py-2.5 px-3 text-center">
-                  <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-mono font-bold ${stockBadgeClass}">
-                    ${remaining}
-                  </span>
-                </td>
-                <td class="py-2.5 px-3 text-right">
-                  <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" title="Add PO In Stock" class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-850 transition-colors">
-                    <i class="fa-solid fa-plus text-[10px]"></i> In
-                  </button>
-                </td>
-              </tr>
-            `;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
-}
-
-// 4. RECYCLE BIN: Mobile Cards + Desktop Table
-function renderRecycleBin() {
-  const container = $('recycleBinTable');
-  $('badgeBinCount').textContent = appData.recycleBin.length;
-  if (!appData.recycleBin.length) {
-    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">Recycle bin is empty.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/50">`;
-  appData.recycleBin.forEach(o => {
-    mobCards += `
-      <div class="p-4 flex items-center justify-between">
-        <div>
-          <span class="font-mono font-bold text-rose-500 block text-xs">${escapeHtml(o.id)}</span>
-          <span class="font-semibold text-xs text-slate-700 dark:text-slate-300 block">${escapeHtml(o.customer)}</span>
-          <span class="text-[10px] text-slate-400">${new Date(o.deletedAt).toLocaleDateString()}</span>
-        </div>
-        <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3.5 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-xs border border-emerald-300 dark:border-emerald-800 transition-colors">
-          <i class="fa-solid fa-clock-rotate-left"></i> Recover
-        </button>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-700/50 border-b border-slate-200/90 dark:border-slate-700/50 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-3 px-4">Order ID</th>
-            <th class="py-3 px-4">Customer</th>
-            <th class="py-3 px-4">Deleted On</th>
-            <th class="py-3 px-4 text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/50">
-          ${appData.recycleBin.map(o => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-              <td class="py-3 px-4"><span class="font-mono font-bold text-rose-500 block">${escapeHtml(o.id)}</span></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 dark:text-slate-300">${escapeHtml(o.customer)}</td>
-              <td class="py-3 px-4 text-slate-500 dark:text-slate-400">${new Date(o.deletedAt).toLocaleDateString()}</td>
-              <td class="py-3 px-4 text-right">
-                <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-800 transition-colors">
-                  <i class="fa-solid fa-clock-rotate-left"></i> Recover
-                </button>
-              </td>
-            </tr>`).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
-}
-
-// 5. SALES BY PRODUCT: Mobile Cards + Desktop Table
-function filterSalesByProductTable() {
-  const query = ($('searchProductSales')?.value || '').toLowerCase().trim();
-  const list = cachedProductSales.filter(p => p.name.toLowerCase().includes(query));
-  const container = $('salesByProductTable');
-
-  if (!list.length) {
-    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No product sales found.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(p => {
-    mobCards += `
-      <div class="p-3.5 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openProductStockModalByName('${escapeHtml(p.name)}')">
-        <div>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${escapeHtml(p.name)}</span>
-          <span class="text-[10px] text-slate-400">Click to view stock</span>
-        </div>
-        <div class="text-right">
-          <span class="font-bold text-xs text-indigo-600 dark:text-indigo-400 block">${p.qty} Sold</span>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${money(p.revenue)}</span>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-2.5 px-3">Product Name</th>
-            <th class="py-2.5 px-3 text-center">Qty Sold</th>
-            <th class="py-2.5 px-3 text-right">Revenue</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(p => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openProductStockModalByName('${escapeHtml(p.name)}')">
-              <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</td>
-              <td class="py-2.5 px-3 text-center font-bold text-indigo-600 dark:text-indigo-400">${p.qty}</td>
-              <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(p.revenue)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
-}
-
-// 6. SALES BY INVOICE: Mobile Cards + Desktop Table
-function filterSalesByInvoiceTable() {
-  const query = ($('searchInvoiceSales')?.value || '').toLowerCase().trim();
-  const list = cachedInvoiceSales.filter(i => i.id.toLowerCase().includes(query) || i.customer.toLowerCase().includes(query));
-  const container = $('salesByInvoiceTable');
-
-  if (!list.length) {
-    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No invoice sales found.</div>';
-    return;
-  }
-
-  let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
-  list.forEach(i => {
-    mobCards += `
-      <div class="p-3.5 space-y-1.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openInvoiceDetailsModal('${i.id}')">
-        <div class="flex items-center justify-between">
-          <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${i.id}</span>
-          <span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(i.status)}">${i.status}</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="font-semibold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(i.customer)}</span>
-          <span class="font-bold text-xs text-slate-800 dark:text-slate-200">${money(i.revenueNoDeli)}</span>
-        </div>
-      </div>
-    `;
-  });
-  mobCards += `</div>`;
-
-  let deskTable = `
-    <div class="hidden md:block overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-2.5 px-3">Invoice ID</th>
-            <th class="py-2.5 px-3">Customer</th>
-            <th class="py-2.5 px-3 text-right">Items Subtotal</th>
-            <th class="py-2.5 px-3 text-center">Status</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
-          ${list.map(i => `
-            <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openInvoiceDetailsModal('${i.id}')">
-              <td class="py-2.5 px-3 font-mono font-bold text-indigo-600 dark:text-indigo-400">${i.id}</td>
-              <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(i.customer)}</td>
-              <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(i.revenueNoDeli)}</td>
-              <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(i.status)}">${i.status}</span></td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-
-  container.innerHTML = mobCards + deskTable;
 }
 
 function showPage(page) {
@@ -2080,6 +1721,39 @@ function executeDeleteConfirm() {
   closeDeleteConfirmModal();
 }
 
+function renderRecycleBin() {
+  const container = $('recycleBinTable');
+  $('badgeBinCount').textContent = appData.recycleBin.length;
+  if (!appData.recycleBin.length) {
+    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">Recycle bin is empty.</div>';
+    return;
+  }
+  container.innerHTML = `
+    <table class="w-full text-left border-collapse text-xs">
+      <thead class="bg-slate-100/90 dark:bg-slate-700/50 border-b border-slate-200/90 dark:border-slate-700/50 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr>
+          <th class="py-3 px-4">Order ID</th>
+          <th class="py-3 px-4">Customer</th>
+          <th class="py-3 px-4">Deleted On</th>
+          <th class="py-3 px-4 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/50">
+        ${appData.recycleBin.map(o => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <td class="py-3 px-4"><span class="font-mono font-bold text-rose-500 block">${escapeHtml(o.id)}</span></td>
+            <td class="py-3 px-4 font-semibold text-slate-700 dark:text-slate-300">${escapeHtml(o.customer)}</td>
+            <td class="py-3 px-4 text-slate-500 dark:text-slate-400">${new Date(o.deletedAt).toLocaleDateString()}</td>
+            <td class="py-3 px-4 text-right">
+              <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-800 transition-colors">
+                <i class="fa-solid fa-clock-rotate-left"></i> Recover
+              </button>
+            </td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+}
+
 function recoverOrder(encodedId) {
   const id = decodeURIComponent(encodedId);
   const idx = appData.recycleBin.findIndex(o => String(o.id) === id);
@@ -2095,6 +1769,127 @@ function recoverOrder(encodedId) {
   }
 }
 
+// Mobile Card View & Desktop Table View for Recent Orders
+function renderDashboard() {
+  const o = appData.orders;
+  $('statOrders').textContent = o.length;
+  $('statPending').textContent = o.filter(x => x.paymentStatus === 'Pending').length;
+  $('statPaid').textContent = o.filter(x => x.paymentStatus === 'Paid').length;
+  $('statRevenue').textContent = money(o.filter(x => x.paymentStatus === 'Paid').reduce((s, x) => s + Number(x.total || 0), 0));
+  
+  const recentSlice = o.slice(0, 5);
+  let rContent = '';
+
+  if (!recentSlice.length) {
+    rContent = '<div class="p-6 text-center text-slate-400 text-xs">No orders recorded yet.</div>';
+  } else {
+    // 1. Mobile Stacked Card View (md:hidden)
+    let mobCards = `<div class="md:hidden divide-y divide-slate-200/80 dark:divide-slate-700/60">`;
+    recentSlice.forEach(x => {
+      mobCards += `
+        <div class="p-3.5 space-y-2 hover:bg-slate-50/80 dark:hover:bg-slate-800/40 transition-colors">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="font-mono font-bold text-xs text-indigo-600 dark:text-indigo-400">${escapeHtml(x.id)}</span>
+              <span class="text-[10px] text-slate-400 dark:text-slate-500 ml-2 font-mono">${escapeHtml(x.date)}</span>
+            </div>
+            <div>${channelBadge(x.channel)}</div>
+          </div>
+          
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="font-semibold text-xs text-slate-800 dark:text-slate-200">${escapeHtml(x.customer)}</div>
+              <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.phone || '-')}</div>
+            </div>
+            <div class="text-right">
+              <span class="font-bold text-xs text-slate-800 dark:text-slate-200 block">${money(x.total)}</span>
+              <span class="text-[10px] text-slate-400">Deliv: ${money(x.delivery)}</span>
+            </div>
+          </div>
+
+          <div class="pt-1.5 flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 text-[10px]">
+            <span class="text-slate-500 dark:text-slate-400 truncate max-w-[170px]">
+              ${(x.items || []).map(i => `${i.name} (x${i.qty})`).join(', ')}
+            </span>
+            <span class="font-bold px-2 py-0.5 rounded ${getStatusClasses(x.paymentStatus)}">
+              ${escapeHtml(x.paymentStatus)}
+            </span>
+          </div>
+        </div>
+      `;
+    });
+    mobCards += `</div>`;
+
+    // 2. Desktop Table View (hidden md:block)
+    let deskTable = `
+      <div class="hidden md:block overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700/60 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+            <tr>
+              <th class="py-2.5 px-3">Order ID</th>
+              <th class="py-2.5 px-3">Customer</th>
+              <th class="py-2.5 px-3">Channel</th>
+              <th class="py-2.5 px-3">Total</th>
+              <th class="py-2.5 px-3">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
+    `;
+    recentSlice.forEach(x => {
+      deskTable += `
+        <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+          <td class="py-2.5 px-3">
+            <span class="font-mono font-bold text-indigo-600 dark:text-indigo-400">${escapeHtml(x.id)}</span>
+            <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.date)}</div>
+          </td>
+          <td class="py-2.5 px-3">
+            <div class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(x.customer)}</div>
+            <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(x.phone || '-')}</div>
+          </td>
+          <td class="py-2.5 px-3">${channelBadge(x.channel)}</td>
+          <td class="py-2.5 px-3 font-bold text-slate-800 dark:text-slate-200">${money(x.total)}</td>
+          <td class="py-2.5 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(x.paymentStatus)}">
+              ${escapeHtml(x.paymentStatus)}
+            </span>
+          </td>
+        </tr>
+      `;
+    });
+    deskTable += `</tbody></table></div>`;
+
+    rContent = mobCards + deskTable;
+  }
+
+  $('recentOrdersTable').innerHTML = rContent;
+
+  const soldMap = {};
+  o.forEach(x => {
+    const st = (x.paymentStatus || '').toLowerCase();
+    if (st === 'cancelled' || st === 'return' || st === 'cancelled / return') return;
+    (x.items || []).forEach(it => {
+      const key = it.code ? it.code : it.name;
+      if(!soldMap[key]) soldMap[key] = { code: it.code, name: it.name, qty: 0 };
+      soldMap[key].qty += Number(it.qty) || 0;
+    });
+  });
+  const soldList = Object.values(soldMap).sort((a,b) => b.qty - a.qty).slice(0, 10);
+  const listEl = $('dashSoldProductsList');
+  if(!soldList.length) {
+    listEl.innerHTML = '<li class="p-5 text-center text-xs text-slate-400">No sold products yet.</li>';
+  } else {
+    listEl.innerHTML = soldList.map(item => `
+      <li class="p-3 sm:p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+        <div>
+          ${item.code ? `<span class="text-[10px] font-mono bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-1.5 py-0.5 rounded mr-1">${escapeHtml(item.code)}</span>` : ''}
+          <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(item.name)}</span>
+        </div>
+        <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded-lg">${item.qty} Sold</span>
+      </li>
+    `).join('');
+  }
+}
+
 function generateRandomCode() {
   $('productCode').value = 'BC-' + Math.floor(100 + Math.random() * 900);
 }
@@ -2107,6 +1902,448 @@ function calculateProductProfit() {
   $('previewProfit').textContent = money(profit);
   $('previewProfit').className = profit >= 0 ? 'font-bold text-emerald-700 dark:text-emerald-400' : 'font-bold text-rose-600 dark:text-rose-400';
   $('previewMargin').textContent = selling > 0 ? ((profit / selling) * 100).toFixed(1) + '%' : '0%';
+}
+
+function handleProductSubmit(e) {
+  e.preventDefault();
+  const code = $('productCode').value.trim().toUpperCase();
+  const name = $('productName').value.trim();
+  const costPrice = Number($('productCostPrice').value) || 0;
+  const price = Number($('productPrice').value);
+  const poInCount = Number($('productInitialStock').value) || 0;
+
+  if (!code || !name || price < 0 || poInCount < 0 || costPrice < 0) { notify('Invalid input.', 'error'); return; }
+  if (appData.products.find(p => (p.code || '').toUpperCase() === code)) { notify(`Code [${code}] exists.`, 'error'); return; }
+
+  const newProd = {
+    id: 'PRD-' + Math.floor(100 + Math.random() * 900),
+    code, name, costPrice, price, poInCount,
+    poHistory: [{ date: new Date().toISOString(), qty: poInCount }]
+  };
+  appData.products.push(newProd);
+  saveToLocalStorage();
+  $('productCode').value = ''; $('productName').value = ''; $('productCostPrice').value = ''; $('productPrice').value = ''; $('productInitialStock').value = '50';
+  calculateProductProfit();
+  notify('Product added.');
+  renderProducts(); renderStock(); updateDatalistPresets();
+}
+
+function renderProducts() {
+  const container = $('productsTable');
+  if (!container) return;
+  const list = appData.products;
+  $('productCountBadge').textContent = list.length + ' Items';
+
+  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
+
+  container.innerHTML = `
+    <table class="w-full text-left text-xs border-collapse">
+      <thead>
+        <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+          <th class="py-2.5 px-3">Product</th>
+          <th class="py-2.5 px-3">Cost / Sell</th>
+          <th class="py-2.5 px-3">Profit (အမြတ်)</th>
+          <th class="py-2.5 px-3 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
+        ${list.map(p => {
+          const cost = Number(p.costPrice) || 0;
+          const selling = Number(p.price) || 0;
+          const profit = selling - cost;
+          return `
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-2.5 px-3">
+                <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
+                <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
+              </td>
+              <td class="py-2.5 px-3">
+                <div class="text-[10px] text-slate-400">Cost: ${money(cost)}</div>
+                <div class="font-bold text-slate-800 dark:text-slate-200">Sell: ${money(selling)}</div>
+              </td>
+              <td class="py-2.5 px-3">
+                <span class="font-bold text-emerald-700 dark:text-emerald-400">${money(profit)}</span>
+                <span class="text-[9px] text-slate-400 block">${selling > 0 ? ((profit/selling)*100).toFixed(0) : 0}% Margin</span>
+              </td>
+              <td class="py-2.5 px-3 text-right">
+                <button onclick="requestDeleteProduct('${encodeURIComponent(p.id)}')" title="Delete Product" class="p-1.5 text-slate-400 hover:text-rose-600 rounded transition-colors">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function getProductOutStock(product) {
+  let soldCount = 0;
+  const pCode = (product.code || '').toLowerCase().trim();
+  const pName = (product.name || '').toLowerCase().trim();
+
+  appData.orders.forEach(o => {
+    const s = (o.paymentStatus || '').toLowerCase();
+    if (s === 'cancelled' || s === 'return' || s === 'cancelled / return') return;
+    (o.items || []).forEach(it => {
+      if (((it.code||'').toLowerCase().trim() === pCode && pCode) || ((it.name||'').toLowerCase().trim() === pName)) {
+        soldCount += (Number(it.qty) || 0);
+      }
+    });
+  });
+  return soldCount;
+}
+
+function renderStock() {
+  const container = $('stockTable');
+  if (!container) return;
+  const list = appData.products;
+  $('productStockCountBadge').textContent = list.length + ' Items';
+
+  if (!list.length) { container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No products in inventory.</div>'; return; }
+
+  container.innerHTML = `
+    <table class="w-full text-left text-xs border-collapse">
+      <thead>
+        <tr class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+          <th class="py-2.5 px-3">Product Name</th>
+          <th class="py-2.5 px-3 text-center">In (PO)</th>
+          <th class="py-2.5 px-3 text-center">Out (Sold)</th>
+          <th class="py-2.5 px-3 text-center">In Stock</th>
+          <th class="py-2.5 px-3 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
+        ${list.map(p => {
+          const poIn = Number(p.poInCount) || 0;
+          const outStock = getProductOutStock(p);
+          const remaining = poIn - outStock;
+          
+          let stockBadgeClass = 'bg-emerald-50 text-emerald-700 border border-emerald-300 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-800';
+          if (remaining <= 5) stockBadgeClass = 'bg-rose-50 text-rose-700 border border-rose-300 font-bold dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800';
+          else if (remaining <= 15) stockBadgeClass = 'bg-amber-50 text-amber-700 border border-amber-300 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-800';
+
+          return `
+            <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+              <td class="py-2.5 px-3">
+                <span class="inline-block font-mono text-[10px] font-bold bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded mr-1.5 border border-indigo-200 dark:border-indigo-800">${escapeHtml(p.code || 'N/A')}</span>
+                <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</span>
+              </td>
+              <td class="py-2.5 px-3 text-center">
+                <button onclick="showHistoryModal('${p.id}', 'in')" class="font-mono font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 border border-slate-300 dark:border-slate-600 px-2.5 py-1 rounded-md transition-colors" title="View In History">${poIn}</button>
+              </td>
+              <td class="py-2.5 px-3 text-center">
+                <button onclick="showHistoryModal('${p.id}', 'out')" class="font-mono font-bold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/30 hover:bg-rose-100 px-2.5 py-1 rounded-md border border-rose-200 dark:border-rose-800 transition-colors" title="View Out History">${outStock}</button>
+              </td>
+              <td class="py-2.5 px-3 text-center">
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-mono font-bold ${stockBadgeClass}">
+                  ${remaining}
+                </span>
+              </td>
+              <td class="py-2.5 px-3 text-right">
+                <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" title="Add PO In Stock" class="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 hover:bg-emerald-100 text-emerald-700 dark:text-emerald-400 font-bold text-[11px] border border-emerald-300 dark:border-emerald-850 transition-colors">
+                  <i class="fa-solid fa-plus text-[10px]"></i> In
+                </button>
+              </td>
+            </tr>
+          `;
+        }).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function openStockInModal(encodedId) {
+  const prod = appData.products.find(p => String(p.id) === decodeURIComponent(encodedId));
+  if (!prod) return;
+  $('stockInProductId').value = prod.id;
+  $('stockInProductName').textContent = `[${prod.code || 'N/A'}] ${prod.name}`;
+  $('stockInQuantityInput').value = 10;
+  $('stockInModal').classList.remove('hidden');
+}
+
+function closeStockInModal() { $('stockInModal').classList.add('hidden'); }
+
+function confirmStockIn() {
+  const id = $('stockInProductId').value;
+  const qty = Number($('stockInQuantityInput').value);
+  if (isNaN(qty) || qty <= 0) return notify('Invalid quantity.', 'error');
+
+  const prod = appData.products.find(p => String(p.id) === id);
+  if (prod) {
+    prod.poInCount = (Number(prod.poInCount) || 0) + qty;
+    if(!prod.poHistory) prod.poHistory = [];
+    prod.poHistory.push({ date: new Date().toISOString(), qty: qty });
+    saveToLocalStorage();
+    notify(`Added +${qty} units to ${prod.name}`);
+    closeStockInModal();
+    renderStock();
+  }
+}
+
+function showHistoryModal(productId, type) {
+  const prod = appData.products.find(p => String(p.id) === productId);
+  if(!prod) return;
+  
+  $('historyModalTitle').textContent = type === 'in' ? 'PO In Stock History' : 'Out Stock History';
+  $('historyModalSubtitle').textContent = `Product: [${prod.code}] ${prod.name}`;
+  $('historyCol1Header').textContent = 'Date & Details';
+  $('historyCol2Header').textContent = 'Quantity';
+  
+  let historyData = [];
+  
+  if (type === 'in') {
+    historyData = (prod.poHistory || []).map(h => ({ date: h.date, qty: h.qty }));
+  } else {
+    const pCode = (prod.code || '').toLowerCase().trim();
+    const pName = (prod.name || '').toLowerCase().trim();
+    appData.orders.forEach(o => {
+      const s = (o.paymentStatus || '').toLowerCase();
+      if (s === 'cancelled' || s === 'return' || s === 'cancelled / return') return;
+      (o.items || []).forEach(it => {
+        if (((it.code||'').toLowerCase().trim() === pCode && pCode) || ((it.name||'').toLowerCase().trim() === pName)) {
+          let d = o.date;
+          if(!d.includes('T')) d = d + 'T12:00:00.000Z';
+          historyData.push({ date: d, qty: Number(it.qty) || 0, orderId: o.id });
+        }
+      });
+    });
+  }
+
+  historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const tbody = $('historyModalTableBody');
+  if(!historyData.length) {
+    tbody.innerHTML = `<tr><td colspan="2" class="text-center py-6 text-slate-400">No records found.</td></tr>`;
+  } else {
+    tbody.innerHTML = historyData.map(h => `
+      <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
+        <td class="py-2.5 px-3">
+          <div class="font-medium text-slate-800 dark:text-slate-200">${new Date(h.date).toLocaleDateString()}</div>
+          ${h.orderId ? `<div class="text-[10px] text-slate-400 font-mono">Invoice: ${h.orderId}</div>` : '<div class="text-[10px] text-slate-400">Manual Stock In</div>'}
+        </td>
+        <td class="py-2.5 px-3 text-right">
+          <span class="font-bold ${type==='in'?'text-emerald-600 dark:text-emerald-400':'text-rose-600 dark:text-rose-400'}">${type==='in'?'+':'-'}${h.qty}</span>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  $('stockHistoryModal').classList.remove('hidden');
+}
+
+function openProductStockModalByName(name) {
+  const p = appData.products.find(x => x.name.toLowerCase().trim() === name.toLowerCase().trim());
+  if (p) showHistoryModal(p.id, 'out');
+}
+
+function openInvoiceDetailsModal(orderId) {
+  const o = appData.orders.find(x => String(x.id) === orderId);
+  if (!o) return;
+  
+  $('historyModalTitle').textContent = `Out Stock - Invoice [${o.id}]`;
+  $('historyModalSubtitle').textContent = `Customer: ${o.customer} | Date: ${o.date}`;
+  $('historyCol1Header').textContent = 'Product Name & Price';
+  $('historyCol2Header').textContent = 'Out Qty';
+  
+  const tbody = $('historyModalTableBody');
+  if (!o.items || !o.items.length) {
+    tbody.innerHTML = `<tr><td colspan="2" class="text-center py-6 text-slate-400">No items in this invoice.</td></tr>`;
+  } else {
+    tbody.innerHTML = o.items.map(it => `
+      <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
+        <td class="py-2.5 px-3">
+          <div class="font-medium text-slate-800 dark:text-slate-200">${escapeHtml(it.name)}</div>
+          <div class="text-[10px] text-slate-400 font-mono">${money(it.price)}</div>
+        </td>
+        <td class="py-2.5 px-3 text-right">
+          <span class="font-bold text-rose-600 dark:text-rose-400">-${it.qty}</span>
+        </td>
+      </tr>
+    `).join('');
+  }
+  
+  $('stockHistoryModal').classList.remove('hidden');
+}
+
+function updateDatalistPresets() {
+  const nameDl = $('productsDatalist');
+  if (nameDl) nameDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.name)}">${p.code ? `[${p.code}] ` : ''}${escapeHtml(p.name)}</option>`).join('');
+  const codeDl = $('productCodesDatalist');
+  if (codeDl) codeDl.innerHTML = appData.products.map(p => `<option value="${escapeHtml(p.code)}">${escapeHtml(p.name)} - ${money(p.price)}</option>`).join('');
+}
+
+function applyNotePreset(val) {
+  if (!val) return;
+  const current = $('note').value.trim();
+  $('note').value = current ? current + ' ' + val : val;
+}
+
+function setReportTimeline(type) {
+  const now = new Date();
+  if (type === 'today') {
+    const todayStr = now.toISOString().split('T')[0];
+    $('reportStart').value = todayStr;
+    $('reportEnd').value = todayStr;
+  } else if (type === 'month') {
+    const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+    const todayStr = now.toISOString().split('T')[0];
+    $('reportStart').value = firstDay;
+    $('reportEnd').value = todayStr;
+  } else {
+    $('reportStart').value = '';
+    $('reportEnd').value = '';
+  }
+  renderReports();
+}
+
+function renderReports() {
+  const startStr = $('reportStart').value;
+  const endStr = $('reportEnd').value;
+  
+  let validOrders = appData.orders;
+  if (startStr && endStr) {
+    const start = new Date(startStr); start.setHours(0,0,0,0);
+    const end = new Date(endStr); end.setHours(23,59,59,999);
+    validOrders = validOrders.filter(o => {
+      const d = new Date(o.date);
+      return d >= start && d <= end;
+    });
+  }
+
+  let totalCost = 0, totalSelling = 0, totalDelivery = 0;
+  let paidRevNoDeli = 0, pendingRevNoDeli = 0;
+  let productSalesMap = {};
+  let invoiceSalesList = [];
+
+  validOrders.forEach(o => {
+    const s = (o.paymentStatus || '').toLowerCase();
+    const isCancelled = (s === 'cancelled' || s === 'return' || s === 'cancelled / return');
+    
+    let orderItemsSubtotal = 0;
+    (o.items || []).forEach(it => {
+      const qty = Number(it.qty) || 0;
+      const sellPrice = Number(it.price) || 0;
+      const itemSub = sellPrice * qty;
+      orderItemsSubtotal += itemSub;
+
+      if (!isCancelled) {
+        totalSelling += itemSub;
+
+        const pCode = (it.code || '').toLowerCase().trim();
+        let costPrice = 0;
+        const p = appData.products.find(x => (x.code || '').toLowerCase().trim() === pCode);
+        if (p) costPrice = Number(p.costPrice) || 0;
+        else costPrice = Math.round(sellPrice * 0.7);
+        totalCost += (costPrice * qty);
+
+        const pName = it.name || 'Unknown Item';
+        if (!productSalesMap[pName]) productSalesMap[pName] = { name: pName, qty: 0, revenue: 0 };
+        productSalesMap[pName].qty += qty;
+        productSalesMap[pName].revenue += itemSub;
+      }
+    });
+
+    if (!isCancelled) {
+      totalDelivery += (Number(o.delivery) || 0);
+
+      if (s === 'paid') paidRevNoDeli += orderItemsSubtotal;
+      if (s === 'pending') pendingRevNoDeli += orderItemsSubtotal;
+
+      invoiceSalesList.push({
+        id: o.id,
+        date: o.date,
+        customer: o.customer,
+        revenueNoDeli: orderItemsSubtotal,
+        status: o.paymentStatus
+      });
+    }
+  });
+
+  const totalProfit = totalSelling - totalCost;
+
+  $('reportOrdersCount').textContent = validOrders.length;
+  $('reportCollected').textContent = money(paidRevNoDeli);
+  $('reportPendingCol').textContent = money(pendingRevNoDeli);
+
+  $('reportCost').textContent = money(totalCost);
+  $('reportSelling').textContent = money(totalSelling);
+  $('reportProfit').textContent = money(totalProfit);
+  $('reportProfit').className = totalProfit >= 0 ? 'text-xl font-black text-emerald-700 dark:text-emerald-300 mt-1' : 'text-xl font-black text-rose-700 dark:text-rose-300 mt-1';
+  $('reportDelivery').textContent = money(totalDelivery);
+
+  cachedProductSales = Object.values(productSalesMap).sort((a,b) => b.revenue - a.revenue);
+  cachedInvoiceSales = invoiceSalesList.sort((a,b) => b.revenueNoDeli - a.revenueNoDeli);
+
+  filterSalesByProductTable();
+  filterSalesByInvoiceTable();
+}
+
+function filterSalesByProductTable() {
+  const query = ($('searchProductSales')?.value || '').toLowerCase().trim();
+  const list = cachedProductSales.filter(p => p.name.toLowerCase().includes(query));
+  const container = $('salesByProductTable');
+
+  if (!list.length) {
+    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No product sales found.</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <table class="w-full text-left border-collapse text-xs">
+      <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr>
+          <th class="py-2.5 px-3">Product Name</th>
+          <th class="py-2.5 px-3 text-center">Qty Sold</th>
+          <th class="py-2.5 px-3 text-right">Revenue</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
+        ${list.map(p => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openProductStockModalByName('${escapeHtml(p.name)}')">
+            <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(p.name)}</td>
+            <td class="py-2.5 px-3 text-center font-bold text-indigo-600 dark:text-indigo-400">${p.qty}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(p.revenue)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function filterSalesByInvoiceTable() {
+  const query = ($('searchInvoiceSales')?.value || '').toLowerCase().trim();
+  const list = cachedInvoiceSales.filter(i => i.id.toLowerCase().includes(query) || i.customer.toLowerCase().includes(query));
+  const container = $('salesByInvoiceTable');
+
+  if (!list.length) {
+    container.innerHTML = '<div class="p-6 text-center text-slate-400 text-xs">No invoice sales found.</div>';
+    return;
+  }
+
+  container.innerHTML = `
+    <table class="w-full text-left border-collapse text-xs">
+      <thead class="bg-slate-100/90 dark:bg-slate-800/60 border-b border-slate-200/90 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr>
+          <th class="py-2.5 px-3">Invoice ID</th>
+          <th class="py-2.5 px-3">Customer</th>
+          <th class="py-2.5 px-3 text-right">Items Subtotal</th>
+          <th class="py-2.5 px-3 text-center">Status</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200/80 dark:divide-slate-700/60">
+        ${list.map(i => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition-colors" onclick="openInvoiceDetailsModal('${i.id}')">
+            <td class="py-2.5 px-3 font-mono font-bold text-indigo-600 dark:text-indigo-400">${i.id}</td>
+            <td class="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(i.customer)}</td>
+            <td class="py-2.5 px-3 text-right font-bold text-slate-800 dark:text-slate-200">${money(i.revenueNoDeli)}</td>
+            <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${getStatusClasses(i.status)}">${i.status}</span></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
 }
 
 function exportCSV() {
