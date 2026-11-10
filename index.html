@@ -165,7 +165,6 @@
 </div>
 
 <div class="flex flex-col md:flex-row min-h-screen relative z-10 pb-24 md:pb-0">
-  <!-- Desktop Sidebar Navigation -->
   <aside id="mainSidebar" class="hidden md:flex w-64 glass-panel border-r border-slate-200/90 dark:border-slate-700/60 flex-col shrink-0 z-20 transition-all duration-300 ease-in-out">
     <div class="p-4 sm:p-5 flex items-center justify-between border-b border-slate-200/90 dark:border-slate-700/60">
       <div class="flex items-center gap-3 overflow-hidden">
@@ -228,13 +227,6 @@
         <span class="sidebar-text whitespace-nowrap">Sales Reports</span>
       </button>
     </nav>
-
-    <div class="mt-auto p-4">
-      <button onclick="location.reload()" class="sidebar-text w-full flex items-center justify-center gap-2 bg-slate-100/90 dark:bg-slate-800/60 backdrop-blur hover:bg-rose-50/80 dark:hover:bg-rose-900/40 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 border border-slate-200/90 dark:border-slate-700 rounded-xl p-2.5 transition-colors text-xs font-bold shadow-sm">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <span>Logout</span>
-      </button>
-    </div>
   </aside>
 
   <!-- Mobile Bottom Navigation Bar -->
@@ -273,7 +265,7 @@
           <div class="flex items-center gap-2">
             <p id="pageSubTitle" class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Brick and Chill - Store Overview</p>
             <span id="syncStatusBadge" class="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400 font-bold border border-emerald-200 dark:border-emerald-800">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Sheet Live Sync On
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Google Sheet Live Synced
             </span>
           </div>
         </div>
@@ -296,22 +288,43 @@
       </div>
     </header>
 
-    <div id="returnBanner" class="hidden mx-4 sm:mx-6 mt-4 p-4 rounded-2xl bg-rose-50/90 dark:bg-rose-900/40 backdrop-blur border border-rose-300 dark:border-rose-800 flex items-start justify-between gap-3 shadow-sm">
-      <div class="flex items-start gap-3">
-        <div class="w-8 h-8 rounded-xl bg-rose-100 dark:bg-rose-800 text-rose-600 dark:text-rose-300 flex items-center justify-center shrink-0 mt-0.5">
-          <i class="fa-solid fa-rotate-left"></i>
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+    <!-- PO Stock Input Modal -->
+    <div id="stockInModal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+      <div class="glass-panel rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200/90 dark:border-slate-700">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+          <i class="fa-solid fa-truck-ramp-box"></i>
         </div>
-        <div>
-          <h4 class="text-sm font-bold text-rose-900 dark:text-rose-100" id="returnBannerTitle">Order Cancel / Return</h4>
-          <p class="text-xs text-rose-700 dark:text-rose-300 mt-0.5" id="returnBannerMsg">Order has been cancelled / returned.</p>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Stock In (PO Input)</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Add purchase / supplier stock quantity</p>
+        
+        <div class="my-4 p-3.5 rounded-2xl bg-slate-50/90 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs space-y-1.5">
+          <div class="flex justify-between">
+            <span class="text-slate-500 dark:text-slate-400">Product:</span>
+            <span class="font-bold text-slate-800 dark:text-slate-200" id="stockInProductName">-</span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Add Quantity (အသစ်ဝင် အရေအတွက်) *</label>
+            <input id="stockInQuantityInput" type="number" min="1" step="1" value="10" class="glass-input w-full px-3.5 py-2.5 rounded-xl text-sm font-bold">
+          </div>
+          <input type="hidden" id="stockInProductId">
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4">
+          <button type="button" onclick="closeStockInModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+            Cancel
+          </button>
+          <button type="button" onclick="confirmStockIn()" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i>
+            <span>Add Stock In</span>
+          </button>
         </div>
       </div>
-      <button onclick="dismissReturnBanner()" class="text-rose-400 dark:text-rose-500 hover:text-rose-700 dark:hover:text-rose-300 p-1">
-        <i class="fa-solid fa-xmark text-sm"></i>
-      </button>
     </div>
-
-    <div id="toastContainer" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
 
     <div class="p-3 sm:p-6 lg:p-8 space-y-6">
 
@@ -444,12 +457,16 @@
               <h3 id="orderFormHeaderTitle" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">Create New Order</h3>
               <p id="orderFormHeaderSub" class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">Enter order details and customer delivery address</p>
             </div>
+            <span id="editingOrderIdBadge" class="hidden text-xs bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 font-mono font-bold px-3 py-1 rounded-lg"></span>
           </div>
 
           <form id="orderForm" onsubmit="handleOrderSubmit(event)" class="p-4 sm:p-6 space-y-6">
             <input type="hidden" id="editOrderId" value="">
 
             <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3 flex items-center gap-2">
+                <i class="fa-regular fa-user"></i> Customer & Order Source
+              </h4>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Customer Name *</label>
@@ -487,6 +504,8 @@
                 </button>
               </div>
               <div id="productItemsContainer" class="space-y-3"></div>
+              <datalist id="productsDatalist"></datalist>
+              <datalist id="productCodesDatalist"></datalist>
 
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 pt-3 border-t border-slate-200/90 dark:border-slate-700/60">
                 <div>
@@ -497,10 +516,13 @@
             </div>
 
             <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-3 flex items-center gap-2">
+                <i class="fa-regular fa-credit-card"></i> Payment & Notes
+              </h4>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Payment Method</label>
-                  <select id="payment" class="glass-input w-full px-3.5 py-2.5 rounded-xl text-sm">
+                  <select id="payment" onchange="syncFormStatusOptions()" class="glass-input w-full px-3.5 py-2.5 rounded-xl text-sm">
                     <option value="Cash on Delivery">Cash on Delivery (COD)</option>
                     <option value="KBZPay">KBZPay</option>
                     <option value="WavePay">WavePay</option>
@@ -520,11 +542,26 @@
                   <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Transaction Ref (Optional)</label>
                   <input id="transaction" placeholder="e.g. KP-903848" class="glass-input w-full px-3.5 py-2.5 rounded-xl text-sm">
                 </div>
+
+                <div class="sm:col-span-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300">Order Notes (Optional)</label>
+                  </div>
+                  <textarea id="note" rows="2" placeholder="Packaging preferences, delivery remarks..." class="glass-input w-full px-3.5 py-2 rounded-xl text-sm"></textarea>
+                </div>
               </div>
             </div>
 
             <div class="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/40 dark:via-purple-950/30 dark:to-pink-950/30 border border-slate-200 dark:border-indigo-800/40 rounded-2xl p-4 sm:p-5 space-y-2">
-              <div class="pt-2 flex justify-between items-baseline">
+              <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400">
+                <span>Subtotal</span>
+                <span id="subtotalText" class="font-medium text-slate-800 dark:text-slate-200">0 Ks</span>
+              </div>
+              <div class="flex justify-between text-xs text-slate-600 dark:text-slate-400">
+                <span>Delivery Fee</span>
+                <span id="deliveryText" class="font-medium text-slate-800 dark:text-slate-200">0 Ks</span>
+              </div>
+              <div class="pt-2 border-t border-indigo-200/80 dark:border-indigo-800/60 flex justify-between items-baseline">
                 <span class="text-sm font-bold text-indigo-950 dark:text-indigo-100">Grand Total</span>
                 <span id="totalText" class="text-xl sm:text-2xl font-black text-indigo-600 dark:text-indigo-400">0 Ks</span>
               </div>
@@ -545,33 +582,69 @@
 
       <!-- ================= PAGE: PRODUCTS ================= -->
       <section id="page-products" class="space-y-6 hidden">
-        <div class="glass-panel rounded-2xl p-5 space-y-4">
-          <h3 class="font-bold text-slate-900 dark:text-white">Products Catalog</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200/90 dark:border-slate-700" id="productsTable"></div>
+        <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          <div class="xl:col-span-1 glass-panel p-5 rounded-2xl self-start">
+            <h3 class="font-bold text-slate-900 dark:text-white mb-1">Add Product & Pricing</h3>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Set cost, selling price and initial stock</p>
+
+            <form onsubmit="handleProductSubmit(event)" class="space-y-3.5">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Product Code *</label>
+                <input id="productCode" required placeholder="e.g. BC-101" class="glass-input w-full px-3.5 py-2 rounded-xl text-xs font-mono font-bold uppercase">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Product Name *</label>
+                <input id="productName" required placeholder="e.g. Coffee Mug" class="glass-input w-full px-3.5 py-2 rounded-xl text-xs">
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Cost Price (အရင်း)</label>
+                  <input id="productCostPrice" type="number" min="0" step="any" required placeholder="0" class="glass-input w-full px-3.5 py-2 rounded-xl text-xs font-medium">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Selling Price (ရောင်း)</label>
+                  <input id="productPrice" type="number" min="0" step="any" required placeholder="0" class="glass-input w-full px-3.5 py-2 rounded-xl text-xs font-bold text-indigo-700 dark:text-indigo-400">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Initial Stock (PO In) *</label>
+                <input id="productInitialStock" type="number" min="0" step="1" value="50" required class="glass-input w-full px-3.5 py-2 rounded-xl text-xs">
+              </div>
+              <button type="submit" class="glass-btn-primary w-full py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 mt-2">
+                <i class="fa-solid fa-plus"></i>
+                <span>Save Product</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="xl:col-span-2 glass-panel rounded-2xl p-5 space-y-4">
+            <h3 class="font-bold text-slate-900 dark:text-white">Products Catalog</h3>
+            <div class="overflow-x-auto rounded-xl border border-slate-200/90 dark:border-slate-700" id="productsTable"></div>
+          </div>
         </div>
       </section>
 
       <!-- ================= PAGE: STOCK CONTROL ================= -->
       <section id="page-stock" class="space-y-6 hidden">
         <div class="glass-panel rounded-2xl p-5 space-y-4">
-          <h3 class="font-bold text-slate-900 dark:text-white">Stock Control</h3>
+          <h3 class="font-bold text-slate-900 dark:text-white">Stock Control & Inventory Balance</h3>
           <div class="overflow-x-auto rounded-xl border border-slate-200/90 dark:border-slate-700" id="stockTable"></div>
         </div>
       </section>
 
       <!-- ================= PAGE: RECYCLE BIN ================= -->
       <section id="page-recyclebin" class="space-y-6 hidden">
-        <div class="glass-panel rounded-2xl p-5 space-y-4">
-          <h3 class="font-bold text-slate-900 dark:text-white">Recycle Bin</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200/90 dark:border-slate-700" id="recycleBinTable"></div>
+        <div class="glass-panel rounded-2xl p-5 flex flex-col min-h-[400px]">
+          <h3 class="font-bold text-slate-900 dark:text-white">Deleted Orders (Recycle Bin)</h3>
+          <div class="overflow-x-auto flex-1 rounded-xl border border-slate-200/90 dark:border-slate-700/60" id="recycleBinTable"></div>
         </div>
       </section>
 
       <!-- ================= PAGE: REPORTS ================= -->
       <section id="page-reports" class="space-y-6 hidden">
-        <div class="glass-panel rounded-2xl p-5 space-y-4">
-          <h3 class="font-bold text-slate-900 dark:text-white">Sales Reports</h3>
-          <p class="text-xs text-slate-500">Total Orders: <span id="reportOrdersCount" class="font-bold">0</span></p>
+        <div class="glass-panel rounded-2xl p-4 sm:p-5 space-y-6">
+          <h3 class="font-bold text-slate-900 dark:text-white">Sales & Financial Analytics</h3>
+          <p class="text-xs text-slate-500">Total Orders: <span id="reportOrdersCount" class="font-bold text-indigo-600">0</span></p>
         </div>
       </section>
 
@@ -696,11 +769,10 @@ function showPage(page) {
   if ($('pageTitle')) $('pageTitle').textContent = t;
   if ($('pageSubTitle')) $('pageSubTitle').textContent = sub;
 
-  if (page === 'orders') renderOrders();
-  if (page === 'dashboard') renderDashboard();
+  renderAll();
 }
 
-// ================= GOOGLE SHEET SYNC ENGINE =================
+// ================= LIVE TWO-WAY SYNC =================
 async function fetchOrdersFromCloudSilently(isManual = false) {
   if (!GOOGLE_SHEET_URL || isPolling) return;
   isPolling = true;
@@ -710,13 +782,13 @@ async function fetchOrdersFromCloudSilently(isManual = false) {
   try {
     const res = await fetch(GOOGLE_SHEET_URL);
     const data = await res.json();
-    let fetched = [];
+    
+    if (data && typeof data === 'object') {
+      const ordersList = Array.isArray(data) ? data : (data.orders || []);
+      const productsList = data.products || appData.products || [];
+      const binList = data.recycleBin || appData.recycleBin || [];
 
-    if (Array.isArray(data)) fetched = data;
-    else if (data && Array.isArray(data.orders)) fetched = data.orders;
-
-    if (Array.isArray(fetched)) {
-      const normalized = fetched.map(row => {
+      const normalizedOrders = ordersList.map(row => {
         const totalVal = Number(row.total) || Number(row["Total"]) || 0;
         const deliVal = Number(row.delivery) || Number(row["Delivery"]) || 0;
 
@@ -727,7 +799,7 @@ async function fetchOrdersFromCloudSilently(isManual = false) {
           customer: String(row.customer || row["Customer"] || "-"),
           phone: String(row.phone || row["Phone"] || "-"),
           address: String(row.address || row["Address"] || ""),
-          itemsSummary: String(row.itemsSummary || row["Products Summary"] || "Order Items"),
+          itemsSummary: String(row.itemsSummary || row["Products Summary"] || "Items"),
           delivery: deliVal,
           total: totalVal,
           payment: String(row.payment || row["Payment"] || "Cash on Delivery"),
@@ -737,16 +809,16 @@ async function fetchOrdersFromCloudSilently(isManual = false) {
         };
       }).filter(o => o.id);
 
-      const isChanged = JSON.stringify(normalized) !== JSON.stringify(appData.orders);
-      if (isChanged || isManual) {
-        appData.orders = normalized;
-        saveToLocalStorage();
-        renderAll();
-        if (isManual) notify("Orders synced from Sheet!");
-      }
+      appData.orders = normalizedOrders;
+      if (data.products) appData.products = productsList;
+      if (data.recycleBin) appData.recycleBin = binList;
+
+      saveToLocalStorage();
+      renderAll();
+      if (isManual) notify("Synced accurately with Google Sheet!");
     }
   } catch (err) {
-    if (isManual) notify("Sync error. Check connection.", "error");
+    if (isManual) notify("Sync connection error.", "error");
   } finally {
     isPolling = false;
   }
@@ -799,6 +871,8 @@ function calculateOrder() {
     subtotal += (p * q);
   });
   const delivery = Number($('delivery').value) || 0;
+  $('subtotalText').textContent = money(subtotal);
+  $('deliveryText').textContent = money(delivery);
   $('totalText').textContent = money(subtotal + delivery);
 }
 
@@ -823,7 +897,7 @@ function handleOrderSubmit(e) {
   });
 
   const payload = {
-    action: "createOrder",
+    action: editId ? "editOrder" : "createOrder",
     id: editId || 'ORD-' + Math.floor(1000 + Math.random() * 9000),
     date: timeStr,
     customer: $('customer').value.trim(),
@@ -835,10 +909,15 @@ function handleOrderSubmit(e) {
     payment: $('payment').value,
     paymentStatus: $('paymentStatus').value,
     transaction: $('transaction').value.trim(),
+    note: $('note').value.trim(),
     itemsSummary: items.map(i => `${i.name} (x${i.qty})`).join('; ')
   };
 
-  if (!editId) {
+  if (editId) {
+    const idx = appData.orders.findIndex(o => String(o.id) === String(editId));
+    if (idx !== -1) appData.orders[idx] = { ...appData.orders[idx], ...payload };
+    notify(`Order [${editId}] updated!`);
+  } else {
     appData.orders.unshift(payload);
     notify(`Order #[${payload.id}] created and sent to Sheet!`);
   }
@@ -847,7 +926,7 @@ function handleOrderSubmit(e) {
   renderAll();
   showPage('orders');
 
-  // Google Sheet ထဲ ဒေတာ တိုက်ရိုက်ရောက်စေခြင်း
+  // Google Sheet ဆီသို့ တိုက်ရိုက်ပို့ခြင်း
   syncToGoogleSheet(payload);
 }
 
@@ -868,14 +947,89 @@ function deleteOrder(encodedId) {
   if (!confirm(`Are you sure you want to delete order [${id}]?`)) return;
   const idx = appData.orders.findIndex(x => String(x.id) === id);
   if (idx > -1) {
-    appData.orders.splice(idx, 1);
+    const deleted = appData.orders.splice(idx, 1)[0];
+    deleted.deletedAt = new Date().toISOString();
+    appData.recycleBin.push(deleted);
     saveToLocalStorage();
     renderAll();
     syncToGoogleSheet({ action: "deleteOrder", id: id });
-    notify(`Order [${id}] deleted!`);
+    notify(`Order [${id}] moved to Recycle Bin.`);
   }
 }
 
+function recoverOrder(encodedId) {
+  const id = decodeURIComponent(encodedId);
+  const idx = appData.recycleBin.findIndex(o => String(o.id) === id);
+  if (idx > -1) {
+    const order = appData.recycleBin.splice(idx, 1)[0];
+    appData.orders.push(order);
+    saveToLocalStorage();
+    renderAll();
+    syncToGoogleSheet({ action: "recoverOrder", id: id });
+    notify(`Order [${id}] recovered!`);
+  }
+}
+
+// ================= PRODUCT & STOCK =================
+function handleProductSubmit(e) {
+  e.preventDefault();
+  const code = $('productCode').value.trim().toUpperCase();
+  const name = $('productName').value.trim();
+  const costPrice = Number($('productCostPrice').value) || 0;
+  const price = Number($('productPrice').value) || 0;
+  const poInCount = Number($('productInitialStock').value) || 0;
+
+  const payload = {
+    action: "createProduct",
+    id: 'PRD-' + Math.floor(100 + Math.random() * 900),
+    code, name, costPrice, price, poInCount
+  };
+
+  appData.products.push(payload);
+  saveToLocalStorage();
+  syncToGoogleSheet(payload);
+  $('productCode').value = ''; $('productName').value = ''; $('productCostPrice').value = ''; $('productPrice').value = '';
+  renderAll();
+  notify(`Product [${code}] added & synced!`);
+}
+
+function deleteProduct(encodedId) {
+  const id = decodeURIComponent(encodedId);
+  if (!confirm("Delete product?")) return;
+  appData.products = appData.products.filter(p => String(p.id) !== id);
+  saveToLocalStorage();
+  renderAll();
+  syncToGoogleSheet({ action: "deleteProduct", id: id });
+  notify("Product deleted.");
+}
+
+function openStockInModal(encodedId) {
+  const id = decodeURIComponent(encodedId);
+  const p = appData.products.find(x => String(x.id) === id);
+  if (!p) return;
+  $('stockInProductId').value = p.id;
+  $('stockInProductName').textContent = `[${p.code}] ${p.name}`;
+  $('stockInQuantityInput').value = 10;
+  $('stockInModal').classList.remove('hidden');
+}
+
+function closeStockInModal() { $('stockInModal').classList.add('hidden'); }
+
+function confirmStockIn() {
+  const id = $('stockInProductId').value;
+  const qty = Number($('stockInQuantityInput').value) || 0;
+  const p = appData.products.find(x => String(x.id) === id);
+  if (p && qty > 0) {
+    p.poInCount = (Number(p.poInCount) || 0) + qty;
+    saveToLocalStorage();
+    renderAll();
+    syncToGoogleSheet({ action: "stockIn", id: id, qty: qty });
+    closeStockInModal();
+    notify(`Added +${qty} to ${p.name}`);
+  }
+}
+
+// ================= RENDER TABLES =================
 function renderOrders() {
   const container = $('ordersTable');
   if (!container) return;
@@ -891,78 +1045,144 @@ function renderOrders() {
   });
 
   if (!filtered.length) {
-    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No orders recorded in Google Sheet.</div>';
+    container.innerHTML = '<div class="p-8 text-center text-slate-400 text-xs">No orders found in Google Sheet.</div>';
     return;
   }
 
-  let deskHtml = `
-    <div class="overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
-        <thead class="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
-          <tr>
-            <th class="py-3 px-4">Order ID & Date</th>
-            <th class="py-3 px-4">Customer Details</th>
-            <th class="py-3 px-4">Channel</th>
-            <th class="py-3 px-4">Products Summary</th>
-            <th class="py-3 px-4">Total</th>
-            <th class="py-3 px-4">Status</th>
-            <th class="py-3 px-4 text-right">Actions</th>
+  container.innerHTML = `
+    <table class="w-full text-left border-collapse text-xs">
+      <thead class="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr>
+          <th class="py-3 px-4">Order ID & Date</th>
+          <th class="py-3 px-4">Customer</th>
+          <th class="py-3 px-4">Channel</th>
+          <th class="py-3 px-4">Products</th>
+          <th class="py-3 px-4">Total</th>
+          <th class="py-3 px-4">Status</th>
+          <th class="py-3 px-4 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+        ${filtered.map(o => `
+          <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+            <td class="py-3 px-4 font-mono font-bold text-indigo-600">${escapeHtml(o.id)}<div class="text-[10px] text-slate-400">${escapeHtml(o.date)}</div></td>
+            <td class="py-3 px-4"><div class="font-bold">${escapeHtml(o.customer)}</div><div class="text-[10px] text-slate-400">${escapeHtml(o.phone)}</div></td>
+            <td class="py-3 px-4">${channelBadge(o.channel)}</td>
+            <td class="py-3 px-4 font-medium">${escapeHtml(o.itemsSummary)}</td>
+            <td class="py-3 px-4 font-bold">${money(o.total)}</td>
+            <td class="py-3 px-4">
+              <select onchange="updateOrderStatus('${encodeURIComponent(o.id)}', this.value)" class="text-[11px] font-bold rounded-lg px-2 py-1 border outline-none ${getStatusClasses(o.paymentStatus)}">
+                <option value="Pending" ${o.paymentStatus==='Pending'?'selected':''}>Pending</option>
+                <option value="Paid" ${o.paymentStatus==='Paid'?'selected':''}>Paid</option>
+                <option value="Delivery Pick Up" ${o.paymentStatus==='Delivery Pick Up'?'selected':''}>Delivery Pick Up</option>
+                <option value="Cancelled" ${o.paymentStatus==='Cancelled'?'selected':''}>Cancelled</option>
+              </select>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <button onclick="deleteOrder('${encodeURIComponent(o.id)}')" class="p-1.5 text-rose-500 hover:text-rose-700"><i class="fa-regular fa-trash-can"></i></button>
+            </td>
           </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-          ${filtered.map(o => {
-            const curStatus = o.paymentStatus || 'Pending';
-            return `
-              <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                <td class="py-3 px-4">
-                  <span class="font-mono font-bold text-indigo-600 block">${escapeHtml(o.id)}</span>
-                  <span class="text-[10px] text-slate-400">${escapeHtml(o.date)}</span>
-                </td>
-                <td class="py-3 px-4">
-                  <div class="font-bold text-slate-800 dark:text-slate-200">${escapeHtml(o.customer)}</div>
-                  <div class="text-[10px] text-slate-400 font-mono">${escapeHtml(o.phone)}</div>
-                </td>
-                <td class="py-3 px-4">${channelBadge(o.channel)}</td>
-                <td class="py-3 px-4 text-slate-600 dark:text-slate-300 font-medium">${escapeHtml(o.itemsSummary)}</td>
-                <td class="py-3 px-4">
-                  <span class="font-bold text-slate-800 dark:text-slate-200 block">${money(o.total)}</span>
-                  <span class="text-[10px] text-slate-400">Deliv: ${money(o.delivery)}</span>
-                </td>
-                <td class="py-3 px-4">
-                  <select onchange="updateOrderStatus('${encodeURIComponent(o.id)}', this.value)" class="text-[11px] font-bold rounded-lg px-2.5 py-1 border outline-none ${getStatusClasses(curStatus)}">
-                    <option value="Pending" ${curStatus === 'Pending' ? 'selected' : ''}>Pending</option>
-                    <option value="Paid" ${curStatus === 'Paid' ? 'selected' : ''}>Paid</option>
-                    <option value="Delivery Pick Up" ${curStatus === 'Delivery Pick Up' ? 'selected' : ''}>Delivery Pick Up</option>
-                    <option value="Cancelled" ${curStatus === 'Cancelled' ? 'selected' : ''}>Cancelled</option>
-                  </select>
-                </td>
-                <td class="py-3 px-4 text-right">
-                  <button type="button" onclick="deleteOrder('${encodeURIComponent(o.id)}')" class="p-1.5 text-rose-500 hover:text-rose-700"><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-              </tr>
-            `;
-          }).join('')}
-        </tbody>
-      </table>
-    </div>
+        `).join('')}
+      </tbody>
+    </table>
   `;
+}
 
-  container.innerHTML = deskHtml;
+function renderProducts() {
+  const container = $('productsTable');
+  if (!container) return;
+  const list = appData.products;
+  if (!list.length) { container.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">No products recorded.</div>'; return; }
+
+  container.innerHTML = `
+    <table class="w-full text-left text-xs border-collapse">
+      <thead class="bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr><th class="p-3">Code & Name</th><th class="p-3">Cost / Sell</th><th class="p-3 text-right">Actions</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+        ${list.map(p => `
+          <tr>
+            <td class="p-3 font-semibold"><span class="font-mono text-indigo-600 mr-1">[${escapeHtml(p.code)}]</span>${escapeHtml(p.name)}</td>
+            <td class="p-3">Cost: ${money(p.costPrice)} | Sell: ${money(p.price)}</td>
+            <td class="p-3 text-right"><button onclick="deleteProduct('${encodeURIComponent(p.id)}')" class="p-1.5 text-rose-500"><i class="fa-solid fa-trash-can"></i></button></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderStock() {
+  const container = $('stockTable');
+  if (!container) return;
+  const list = appData.products;
+  if (!list.length) { container.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">No products in stock.</div>'; return; }
+
+  container.innerHTML = `
+    <table class="w-full text-left text-xs border-collapse">
+      <thead class="bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr><th class="p-3">Product</th><th class="p-3 text-center">PO In</th><th class="p-3 text-right">Actions</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+        ${list.map(p => `
+          <tr>
+            <td class="p-3 font-semibold">[${escapeHtml(p.code)}] ${escapeHtml(p.name)}</td>
+            <td class="p-3 text-center font-bold text-indigo-600">${p.poInCount || 0}</td>
+            <td class="p-3 text-right">
+              <button onclick="openStockInModal('${encodeURIComponent(p.id)}')" class="px-2 py-1 rounded bg-emerald-50 text-emerald-600 font-bold border border-emerald-200">+ In</button>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderRecycleBin() {
+  const container = $('recycleBinTable');
+  if (!container) return;
+  const list = appData.recycleBin;
+  if (!list.length) { container.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">Recycle bin is empty.</div>'; return; }
+
+  container.innerHTML = `
+    <table class="w-full text-left text-xs border-collapse">
+      <thead class="bg-slate-100 dark:bg-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase">
+        <tr><th class="p-3">Order ID</th><th class="p-3">Customer</th><th class="p-3 text-right">Actions</th></tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+        ${list.map(o => `
+          <tr>
+            <td class="p-3 font-mono font-bold text-rose-500">${escapeHtml(o.id)}</td>
+            <td class="p-3 font-semibold">${escapeHtml(o.customer)}</td>
+            <td class="p-3 text-right">
+              <button onclick="recoverOrder('${encodeURIComponent(o.id)}')" class="px-3 py-1 rounded bg-emerald-50 text-emerald-600 font-bold border border-emerald-200">Recover</button>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
 }
 
 function renderDashboard() {
   const o = appData.orders;
-  if ($('statOrders')) $('statOrders').textContent = o.length;
-  if ($('statPending')) $('statPending').textContent = o.filter(x => x.paymentStatus === 'Pending').length;
-  if ($('statPaid')) $('statPaid').textContent = o.filter(x => x.paymentStatus === 'Paid').length;
-  if ($('statRevenue')) $('statRevenue').textContent = money(o.filter(x => x.paymentStatus === 'Paid').reduce((s, x) => s + Number(x.total || 0), 0));
+  $('statOrders').textContent = o.length;
+  $('statPending').textContent = o.filter(x => x.paymentStatus === 'Pending').length;
+  $('statPaid').textContent = o.filter(x => x.paymentStatus === 'Paid').length;
+  $('statRevenue').textContent = money(o.filter(x => x.paymentStatus === 'Paid').reduce((s, x) => s + Number(x.total || 0), 0));
 }
 
 function renderAll() {
-  if ($('badgeOrderCount')) $('badgeOrderCount').textContent = appData.orders.length;
-  if ($('mobBadgeOrderCount')) $('mobBadgeOrderCount').textContent = appData.orders.length;
+  $('badgeOrderCount').textContent = appData.orders.length;
+  $('mobBadgeOrderCount').textContent = appData.orders.length;
+  $('badgeBinCount').textContent = appData.recycleBin.length;
+  $('reportOrdersCount').textContent = appData.orders.length;
+
   renderDashboard();
   renderOrders();
+  renderProducts();
+  renderStock();
+  renderRecycleBin();
 }
 
 const STORAGE_KEY = 'brick_and_chill_data_v4';
@@ -990,15 +1210,10 @@ function exportCSV() {
 window.addEventListener('DOMContentLoaded', () => {
   loadData();
   renderAll();
-  showPage('orders');
+  showPage('dashboard');
 
-  // Website ဖွင့်သည်နှင့် Sheet ထဲက ဒေတာများကို ဦးစားပေးဆွဲယူမည်
   fetchOrdersFromCloudSilently(false);
-
-  // ၅ စက္ကန့်တစ်ကြိမ် နောက်ကွယ်မှ Auto Live Sync လုပ်ဆောင်မည်
-  setInterval(() => {
-    fetchOrdersFromCloudSilently(false);
-  }, 5000);
+  setInterval(() => fetchOrdersFromCloudSilently(false), 5000);
 });
 </script>
 </body>
